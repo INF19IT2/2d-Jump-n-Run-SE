@@ -1,5 +1,10 @@
 # 2d-Jump-n-Run
 Das Spiel wird mit Hilfe der [Godot-Engine](https://godotengine.org/) entwickelt.
+## Einrichtung
+Das Projekt lokal einbinden:
+
+Godot Engine starten<br>
+Import -> in das Projekt-Verzeichnis wechseln -> "project.godot" auswählen
 ## Development
 Bevor man die Abarbeitung eines Issues beginnt, unbedingt sich selbst zu diesem assignen. <br/>
 Die eigentliche Entwicklung erfolgt immer auf einem eigenen Branch:
