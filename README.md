@@ -28,3 +28,12 @@ Sprache des Codes unbedingt auf Englisch halten.<br/>
 Selbsterklärende Namen verwenden.<br/>
 Falls die Funktion sich nicht aufgrund ihrer Einfachkeit und des Namen selbst beschreibt, Beschreibung ähnlich Java-Docs als Kommentar hinzufügen.</br>
 Eine Liste mit wichtigen Klassen und Funktionen folgt noch.<br/>
+
+## Ordner-Struktur
+Als Hauptordner für den Code dient der Ordner 2d-Jump-n-Run-SE, dabei gibt es folgende Unterordner
+* **Scenes/** wird für die Erstellung und Speicherung von Szenen verwendet
+  * Bitte Unterordner mit First_Level, Second_Level usw. erstellen, ggf. shared-Ordner mit geteilten Szenen
+* **Scripts/** wird für die Erstellung von Skripten verwendet
+  * Bitte Unterordner für die zugehörigen Modell-Objeke erstellen, z.B. Player, Boss_1 usw.
+* **imagesFiles** enthält alle Bilddateien
+  * Hier ebenfalls Unterordner zum zugehörigen Modell/Level erstellen
