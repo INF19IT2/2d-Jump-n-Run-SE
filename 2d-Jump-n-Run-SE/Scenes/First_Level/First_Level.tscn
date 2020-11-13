@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/First_Level/first_level_tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://placeholder.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 33.7427, 75.2299 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enable = true
+__meta__ = {
+"_editor_description_": "Test"
+}
+
+[node name="TileMap" type="TileMap" parent="CanvasLayer"]
+tile_set = ExtResource( 1 )
+format = 1
+tile_data = PoolIntArray( 393220, 13, 0, 393221, 14, 0, 393228, 10, 0, 458755, 13, 0, 458756, 22, 0, 458757, 23, 0, 458758, 14, 0, 458761, 10, 0, 524288, 25, 0, 524289, 25, 0, 524290, 24, 0, 524291, 22, 0, 524292, 0, 0, 524293, 0, 0, 524294, 23, 0, 524295, 25, 0, 524296, 25, 0, 524297, 25, 0, 524298, 25, 0, 524299, 25, 0, 524300, 25, 0, 524301, 25, 0, 524302, 25, 0, 524303, 25, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="CanvasLayer"]
+mode = 2
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/RigidBody2D"]
+position = Vector2( 60.7352, 399.117 )
+scale = Vector2( 0.0533761, 0.166467 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/RigidBody2D"]
+position = Vector2( 60.0677, 397.782 )
+shape = SubResource( 1 )
