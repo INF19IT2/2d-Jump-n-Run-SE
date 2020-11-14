@@ -18,3 +18,11 @@ tile_data = PoolIntArray( 65535, 0, 0, 21, 0, 0, 131071, 0, 0, 65557, 0, 0, 1966
 
 [node name="Player" parent="CanvasLayer" instance=ExtResource( 3 )]
 position = Vector2( 155, 286 )
+
+[node name="PlayerCamera" type="Camera2D" parent="CanvasLayer/Player"]
+current = true
+limit_left = 0
+limit_top = 0
+limit_right = 1400
+limit_bottom = 600
+drag_margin_v_enabled = true
