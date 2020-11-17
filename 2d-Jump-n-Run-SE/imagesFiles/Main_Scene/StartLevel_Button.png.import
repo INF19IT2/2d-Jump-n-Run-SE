@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Level-Menu_Button.png-dbbfe6843bcd0fa25c19ca10813adbd5.stex"
+path="res://.import/StartLevel_Button.png-8ef01fdecb4059b61cef60821677c338.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imagesFiles/Main_Scene/Level-Menu_Button.png"
-dest_files=[ "res://.import/Level-Menu_Button.png-dbbfe6843bcd0fa25c19ca10813adbd5.stex" ]
+source_file="res://imagesFiles/Main_Scene/StartLevel_Button.png"
+dest_files=[ "res://.import/StartLevel_Button.png-8ef01fdecb4059b61cef60821677c338.stex" ]
 
 [params]
 

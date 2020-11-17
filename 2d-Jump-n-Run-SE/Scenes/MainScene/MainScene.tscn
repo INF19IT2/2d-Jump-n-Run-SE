@@ -4,12 +4,13 @@
 [ext_resource path="res://imagesFiles/Main_Scene/grey_background.png" type="Texture" id=2]
 [ext_resource path="res://imagesFiles/Main_Scene/Exit_Button.png" type="Texture" id=3]
 [ext_resource path="res://imagesFiles/Main_Scene/Options_Button.png" type="Texture" id=4]
-[ext_resource path="res://imagesFiles/Main_Scene/Level-Menu_Button.png" type="Texture" id=5]
+[ext_resource path="res://imagesFiles/Main_Scene/StartLevel_Button.png" type="Texture" id=5]
 [ext_resource path="res://Scripts/MainScene_Interaction/MainScene.gd" type="Script" id=6]
 
 [node name="MainScene" type="TextureRect"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = -1.26001
+margin_right = 1023.74
+margin_bottom = 600.0
 texture = ExtResource( 2 )
 script = ExtResource( 6 )
 __meta__ = {
@@ -33,13 +34,6 @@ margin_right = 718.542
 margin_bottom = 415.417
 texture_normal = ExtResource( 1 )
 
-[node name="LevelMenuButton" type="TextureButton" parent="."]
-margin_left = 341.291
-margin_top = 325.417
-margin_right = 523.291
-margin_bottom = 415.417
-texture_normal = ExtResource( 5 )
-
 [node name="OptionsButton" type="TextureButton" parent="."]
 margin_left = 531.779
 margin_top = 169.852
@@ -49,5 +43,15 @@ texture_normal = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="StartLevelButton" type="TextureButton" parent="."]
+margin_left = 341.438
+margin_top = 326.319
+margin_right = 523.438
+margin_bottom = 416.319
+texture_normal = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="ExitButton" to="." method="_on_ExitButton_pressed"]
-[connection signal="pressed" from="OptionsButton" to="." method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="StartLevelButton" to="." method="_on_StartLevelButton_pressed"]
