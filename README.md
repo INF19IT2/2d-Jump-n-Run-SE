@@ -37,3 +37,7 @@ Als Hauptordner für den Code dient der Ordner 2d-Jump-n-Run-SE, dabei gibt es f
   * Bitte Unterordner für die zugehörigen Modell-Objeke erstellen, z.B. Player, Boss_1 usw.
 * **imagesFiles** enthält alle Bilddateien
   * Hier ebenfalls Unterordner zum zugehörigen Modell/Level erstellen
+
+
+## Google-Drive Link zu allen relevanten Dokumenten
+https://drive.google.com/drive/folders/1fcZYi8vxpXD6oUy3UmAal-U4MVxDlJ2M?usp=sharing
