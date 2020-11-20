@@ -28,5 +28,6 @@ limit_right = 1400
 limit_bottom = 600
 drag_margin_v_enabled = true
 
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource( 2 )]
-visible = true
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer2" instance=ExtResource( 2 )]
