@@ -17,6 +17,7 @@ func _on_OptionsButton_pressed():
 func _on_MainMenuButton_pressed():
 	# Main Menu
 	get_tree().change_scene("res://Scenes/MainScene/MainScene.tscn")
+	get_tree().paused = false
 
 func _input(event):
 	if not visible:
