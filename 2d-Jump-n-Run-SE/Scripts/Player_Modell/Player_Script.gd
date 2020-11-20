@@ -27,4 +27,5 @@ func _physics_process(delta):
 	#Applying Velocity
 		#Vector2.UP -> Ground is facing up
 	velocity = move_and_slide(velocity, Vector2.UP)
-	
+
+
