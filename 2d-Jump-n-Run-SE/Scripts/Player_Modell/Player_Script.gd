@@ -1,9 +1,9 @@
 extends KinematicBody2D
 
 #define variables
-var speed : int = 200
-var jumpForce : int = 500
-var gravity : int = 800
+export var speed : int = 200
+export var jumpForce : int = 500
+export var gravity : int = 800
 
 var velocity = Vector2()
 
@@ -13,9 +13,9 @@ func _physics_process(delta):
 	
 	#define movement
 	if Input.is_action_pressed("move_right"):
-		velocity.x += 200
+		velocity.x += speed
 	if Input.is_action_pressed("move_left"):
-		velocity.x -= 200
+		velocity.x -= speed
 	
 	#gravity
 	velocity.y += gravity * delta
