@@ -13,6 +13,10 @@ signal player_stats_changed
 
 var velocity = Vector2()
 
+#gets called when the node and its children have entered the scene tree
+func _ready():
+	emit_signal("player_stats_changed", self)
+
 #gets called 60 times a second
 func _physics_process(delta):
 	velocity.x = 0
@@ -33,5 +37,8 @@ func _physics_process(delta):
 	#Applying Velocity
 		#Vector2.UP -> Ground is facing up
 	velocity = move_and_slide(velocity, Vector2.UP)
-
-
+	
+	if Input.is_action_just_pressed("test_dmg"):
+		if health >= 10:
+			health -= 10
+			emit_signal("player_stats_changed", self)
