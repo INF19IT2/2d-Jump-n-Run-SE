@@ -1,0 +1,23 @@
+[gd_scene format=2]
+
+[node name="HealthBar" type="CanvasLayer"]
+
+[node name="Health" type="ColorRect" parent="."]
+margin_left = 5.0
+margin_top = 10.0
+margin_right = 107.0
+margin_bottom = 22.0
+color = Color( 0, 0, 0, 0.627451 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bar" type="ColorRect" parent="Health"]
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 101.0
+margin_bottom = 11.0
+color = Color( 1, 0.196078, 0.196078, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

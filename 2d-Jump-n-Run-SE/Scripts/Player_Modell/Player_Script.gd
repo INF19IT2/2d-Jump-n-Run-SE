@@ -5,6 +5,13 @@ export var speed : int = 200
 export var jumpForce : int = 500
 export var gravity : int = 800
 
+# Player stats
+var health : int = 100
+var health_max : int = 100
+var health_reg : int = 1
+
+signal player_stats_changed
+
 var velocity = Vector2()
 
 #gets called 60 times a second
