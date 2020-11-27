@@ -12,7 +12,8 @@ func _on_RestartButton_pressed():
 	
 func _on_OptionsButton_pressed():
 	# Options
-	pass
+	get_tree().change_scene("res://Scenes/Options/OptionsMenu.tscn")
+	get_tree().paused = false
 	
 func _on_MainMenuButton_pressed():
 	# Main Menu
