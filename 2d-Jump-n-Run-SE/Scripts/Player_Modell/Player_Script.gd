@@ -8,7 +8,6 @@ export var gravity : int = 800
 # Player stats
 var health : int = 100
 var health_max : int = 100
-var health_reg : int = 1
 
 signal player_stats_changed
 
