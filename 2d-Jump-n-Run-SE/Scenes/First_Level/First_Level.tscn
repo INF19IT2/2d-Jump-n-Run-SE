@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/First_Level/first_level_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/PauseMenu/PaueMenu.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Objects/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Objects/Collectable.tscn" type="PackedScene" id=4]
 
 [node name="Node2D" type="Node2D"]
 
@@ -31,3 +32,12 @@ drag_margin_v_enabled = true
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer2" instance=ExtResource( 2 )]
+
+[node name="Collectable" parent="." instance=ExtResource( 4 )]
+position = Vector2( 540.546, 242.058 )
+
+[node name="Collectable2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 719.882, 243.946 )
+
+[node name="Collectable3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 24.2465, 234.507 )

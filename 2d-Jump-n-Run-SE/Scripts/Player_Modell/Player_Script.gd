@@ -5,6 +5,8 @@ export var speed : int = 200
 export var jumpForce : int = 500
 export var gravity : int = 800
 
+var coins : int = 0
+
 var velocity = Vector2()
 
 #gets called 60 times a second
@@ -29,3 +31,7 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector2.UP)
 
 
+func add_collectable():
+	coins += 1
+	var lab = get_node("Label")
+	lab.set_text(str(coins))
