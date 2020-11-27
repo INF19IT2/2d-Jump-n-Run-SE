@@ -9,8 +9,9 @@
 
 [node name="MainScene" type="TextureRect"]
 margin_left = -1.26001
+margin_top = -4.0
 margin_right = 1023.74
-margin_bottom = 600.0
+margin_bottom = 596.0
 texture = ExtResource( 2 )
 script = ExtResource( 6 )
 __meta__ = {
@@ -33,6 +34,9 @@ margin_top = 325.417
 margin_right = 718.542
 margin_bottom = 415.417
 texture_normal = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="OptionsButton" type="TextureButton" parent="."]
 margin_left = 531.779
