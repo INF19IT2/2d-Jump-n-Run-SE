@@ -39,6 +39,10 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
 	if Input.is_action_just_pressed("test_dmg"):
-		if health >= 10:
+		if health > 10:
 			health -= 10
 			emit_signal("player_stats_changed", self)
+		elif health <= 10:
+			health = 0
+			emit_signal("player_stats_changed", self)
+			print("Dead")

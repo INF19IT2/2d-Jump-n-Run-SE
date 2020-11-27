@@ -16,10 +16,10 @@ __meta__ = {
 }
 
 [node name="Bar" type="ColorRect" parent="Health"]
-margin_left = 1.0
-margin_top = 1.0
-margin_right = 101.0
-margin_bottom = 11.0
+margin_left = 0.867569
+margin_top = 0.867569
+margin_right = 100.868
+margin_bottom = 10.8676
 color = Color( 1, 0.196078, 0.196078, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
