@@ -6,7 +6,7 @@ var resolutionDropdown
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	resolutionDropdown = get_node("GraphicOptions/ResolutionOptions")
-	var currentResolution = get_viewport().size
+	var currentResolution = OS.window_size
 	resolutionDropdown.set_item_text(0,String(currentResolution[0]) + "x" + String(currentResolution[1]))
 	resolutions[0] = Vector2(currentResolution[0],currentResolution[1])
 
@@ -18,4 +18,12 @@ func _ready():
 
 func _on_ResolutionOptions_item_selected(index):
 	var selectedResolution = resolutions[resolutionDropdown.get_selected_id()]
-	get_viewport().set_size_override(true,selectedResolution)
+	OS.window_size = selectedResolution
+
+
+func _on_CheckButton_toggled(button_pressed):
+	if(button_pressed):
+		OS.window_size = OS.get_screen_size()
+	else:
+		OS.window_size = resolutions[0]
+	OS.window_borderless = button_pressed
