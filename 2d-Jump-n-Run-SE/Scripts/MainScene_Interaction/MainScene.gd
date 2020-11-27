@@ -25,3 +25,7 @@ func _on_StartLevelButton_pressed():
 	get_tree().change_scene("res://Scenes/First_Level/First_Level.tscn")
 	pass # Replace with function body.
 
+
+
+func _on_OptionsButton_pressed():
+	get_tree().change_scene("res://Scenes/Options/OptionsMenu.tscn")

@@ -27,3 +27,7 @@ func _on_CheckButton_toggled(button_pressed):
 	else:
 		OS.window_size = resolutions[0]
 	OS.window_borderless = button_pressed
+
+
+func _on_TextureButton_pressed():
+	get_tree().change_scene("res://Scenes/MainScene/MainScene.tscn")

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/Options/Options.gd" type="Script" id=1]
+[ext_resource path="res://imagesFiles/Main_Scene/Exit_Button.png" type="Texture" id=2]
 
 [node name="Options" type="TextureRect"]
 anchor_right = 1.0
@@ -169,11 +170,11 @@ __meta__ = {
 }
 
 [node name="GameOptions" type="Control" parent="."]
-anchor_top = 0.747
+anchor_top = 0.653
 anchor_right = 1.0
-anchor_bottom = 0.747
-margin_top = -0.200012
-margin_bottom = 151.8
+anchor_bottom = 0.653
+margin_top = 0.199982
+margin_bottom = 152.2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -187,5 +188,17 @@ margin_top = 3.05176e-05
 margin_right = 0.127975
 margin_bottom = 0.0400286
 text = "Game Options:"
+
+[node name="TextureButton" type="TextureButton" parent="."]
+anchor_left = 0.414
+anchor_top = 0.84
+anchor_right = 0.592
+anchor_bottom = 0.84
+margin_left = 0.0639648
+margin_top = -3.05176e-05
+margin_right = -0.208008
+margin_bottom = 90.0
+texture_normal = ExtResource( 2 )
 [connection signal="item_selected" from="GraphicOptions/ResolutionOptions" to="." method="_on_ResolutionOptions_item_selected"]
 [connection signal="toggled" from="GraphicOptions/CheckButton" to="." method="_on_CheckButton_toggled"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
