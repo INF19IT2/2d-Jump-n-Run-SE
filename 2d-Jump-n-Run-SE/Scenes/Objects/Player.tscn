@@ -18,4 +18,15 @@ texture = ExtResource( 1 )
 position = Vector2( 0, 0.420448 )
 shape = SubResource( 1 )
 
+
 [node name="HealthBar" parent="." instance=ExtResource( 3 )]
+
+[node name="Label" type="Label" parent="."]
+margin_left = -19.799
+margin_top = -89.8026
+margin_right = 20.201
+margin_bottom = -75.8026
+__meta__ = {
+"_edit_use_anchors_": false
+}
+

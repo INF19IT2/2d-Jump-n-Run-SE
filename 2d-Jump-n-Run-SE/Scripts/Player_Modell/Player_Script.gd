@@ -5,11 +5,15 @@ export var speed : int = 200
 export var jumpForce : int = 500
 export var gravity : int = 800
 
+
 # Player stats
 var health : int = 100
 var health_max : int = 100
 
 signal player_stats_changed
+
+var coins : int = 0
+
 
 var velocity = Vector2()
 
@@ -37,7 +41,7 @@ func _physics_process(delta):
 	#Applying Velocity
 		#Vector2.UP -> Ground is facing up
 	velocity = move_and_slide(velocity, Vector2.UP)
-	
+
 	if Input.is_action_just_pressed("test_dmg"):
 		if health > 10:
 			health -= 10
@@ -46,3 +50,8 @@ func _physics_process(delta):
 			health = 0
 			emit_signal("player_stats_changed", self)
 			print("Dead")
+
+func add_collectable():
+	coins += 1
+	var lab = get_node("Label")
+	lab.set_text(str(coins))
