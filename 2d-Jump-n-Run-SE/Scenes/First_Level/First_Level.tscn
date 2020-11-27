@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scenes/First_Level/first_level_tileset.tres" type="TileSet" id=1]
-[ext_resource path="res://Scenes/PauseMenu/PaueMenu.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Objects/Player.tscn" type="PackedScene" id=3]
 
 [node name="Node2D" type="Node2D"]
@@ -27,7 +26,3 @@ limit_top = 0
 limit_right = 1400
 limit_bottom = 600
 drag_margin_v_enabled = true
-
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
-
-[node name="PauseMenu" parent="CanvasLayer2" instance=ExtResource( 2 )]
