@@ -30,9 +30,9 @@ limit_right = 1400
 limit_bottom = 600
 drag_margin_v_enabled = true
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+[node name="PauseMenu" type="CanvasLayer" parent="."]
 
-[node name="PauseMenu" parent="CanvasLayer2" instance=ExtResource( 2 )]
+[node name="PauseMenu" parent="PauseMenu" instance=ExtResource( 2 )]
 
 [node name="Collectable" parent="." instance=ExtResource( 4 )]
 position = Vector2( 540.546, 242.058 )
@@ -45,3 +45,4 @@ position = Vector2( 24.2465, 234.507 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 5 )]
 position = Vector2( 801, 310 )
+
