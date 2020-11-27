@@ -1,0 +1,204 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Options/Options.gd" type="Script" id=1]
+[ext_resource path="res://imagesFiles/Main_Scene/Exit_Button.png" type="Texture" id=2]
+
+[node name="Options" type="TextureRect"]
+anchor_right = 1.0
+margin_bottom = 600.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GraphicOptions" type="Control" parent="."]
+anchor_top = -0.013
+anchor_right = 1.0
+margin_top = 7.8
+margin_bottom = 184.0
+
+[node name="ResolutionOptions" type="OptionButton" parent="GraphicOptions"]
+anchor_left = 0.754
+anchor_top = 0.13
+anchor_right = 0.895
+anchor_bottom = 0.348
+margin_left = -4.09601
+margin_top = 0.079998
+margin_right = -4.48004
+margin_bottom = -0.0320053
+text = "CurrentResolution"
+items = [ "CurrentResolution", null, false, 0, null, "1920x1080", null, false, 1, null, "1280x720", null, false, 2, null, "800x600", null, false, 3, null ]
+selected = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResolutionLabel" type="Label" parent="GraphicOptions/ResolutionOptions"]
+anchor_left = -4.889
+anchor_top = 0.4
+anchor_right = -4.042
+anchor_bottom = 0.8
+margin_left = 0.0160522
+margin_right = 0.0480347
+margin_bottom = 1.0
+text = "Change Resolution:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckButton" type="CheckButton" parent="GraphicOptions"]
+anchor_left = 0.828
+anchor_top = 0.522
+anchor_right = 0.902
+anchor_bottom = 0.739
+margin_left = 0.128052
+margin_top = -0.0480042
+margin_right = 0.352051
+margin_bottom = 0.0240021
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FullscreenLabel" type="Label" parent="GraphicOptions/CheckButton"]
+anchor_left = -10.316
+anchor_top = 0.2
+anchor_right = -8.803
+anchor_bottom = 0.6
+margin_left = 0.0160522
+margin_right = 0.0280151
+text = "Toggle Fullscreen:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="RichTextLabel" parent="GraphicOptions"]
+margin_left = 16.0
+margin_top = 8.0
+margin_right = 144.0
+margin_bottom = 40.0
+bbcode_enabled = true
+bbcode_text = "[b]Graphic Options:[/b]"
+text = "Graphic Options:"
+
+[node name="SoundOptions" type="Control" parent="."]
+anchor_top = 0.307
+anchor_right = 1.0
+anchor_bottom = 0.307
+margin_top = -0.200012
+margin_bottom = 199.8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SoundOptions" type="RichTextLabel" parent="SoundOptions"]
+margin_left = 16.0
+margin_right = 160.0
+margin_bottom = 40.0
+bbcode_enabled = true
+bbcode_text = "[b]Sound Options:[/b]"
+text = "Sound Options:"
+
+[node name="MasterSlider" type="HSlider" parent="SoundOptions"]
+anchor_left = 0.703
+anchor_top = 0.2
+anchor_right = 0.891
+anchor_bottom = 0.28
+margin_left = 0.128052
+margin_top = 3.8147e-06
+margin_right = -0.383972
+margin_bottom = 7.62939e-06
+value = 100.0
+
+[node name="MasterLabel" type="Label" parent="SoundOptions/MasterSlider"]
+anchor_left = -3.417
+anchor_right = -2.833
+anchor_bottom = 0.875
+margin_left = 0.0639648
+margin_top = 5.72205e-06
+margin_right = -0.0640259
+margin_bottom = 4.76837e-06
+text = "Master Volume:"
+
+[node name="SFXSlider" type="HSlider" parent="SoundOptions"]
+anchor_left = 0.703
+anchor_top = 0.52
+anchor_right = 0.891
+anchor_bottom = 0.6
+margin_left = 0.127991
+margin_top = 7.62939e-06
+margin_right = -0.384033
+margin_bottom = 1.52588e-05
+value = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SFXLabel" type="Label" parent="SoundOptions/SFXSlider"]
+anchor_left = -3.417
+anchor_right = -2.833
+anchor_bottom = 0.875
+margin_left = 0.0643311
+margin_right = -0.0636597
+text = "SFX Volume:"
+
+[node name="MusicSlider" type="HSlider" parent="SoundOptions"]
+anchor_left = 0.703
+anchor_top = 0.8
+anchor_right = 0.891
+anchor_bottom = 0.88
+margin_left = 0.127991
+margin_top = 1.52588e-05
+margin_right = -0.384033
+margin_bottom = 1.52588e-05
+value = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MusicLabel" type="Label" parent="SoundOptions/MusicSlider"]
+anchor_left = -3.417
+anchor_top = 0.333
+anchor_right = -2.833
+anchor_bottom = 1.209
+margin_left = 0.0640259
+margin_top = 0.0159388
+margin_right = -0.0639648
+margin_bottom = -9.34406
+text = "Music Volume:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOptions" type="Control" parent="."]
+anchor_top = 0.653
+anchor_right = 1.0
+anchor_bottom = 0.653
+margin_top = 0.199982
+margin_bottom = 152.2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOptions" type="RichTextLabel" parent="GameOptions"]
+anchor_left = 0.016
+anchor_right = 0.203
+anchor_bottom = 0.105
+margin_left = -0.384001
+margin_top = 3.05176e-05
+margin_right = 0.127975
+margin_bottom = 0.0400286
+text = "Game Options:"
+
+[node name="TextureButton" type="TextureButton" parent="."]
+anchor_left = 0.414
+anchor_top = 0.84
+anchor_right = 0.592
+anchor_bottom = 0.84
+margin_left = 0.0639648
+margin_top = -3.05176e-05
+margin_right = -0.208008
+margin_bottom = 90.0
+texture_normal = ExtResource( 2 )
+[connection signal="item_selected" from="GraphicOptions/ResolutionOptions" to="." method="_on_ResolutionOptions_item_selected"]
+[connection signal="toggled" from="GraphicOptions/CheckButton" to="." method="_on_CheckButton_toggled"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
