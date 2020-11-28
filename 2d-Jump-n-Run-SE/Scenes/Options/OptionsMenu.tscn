@@ -7,8 +7,6 @@
 [node name="Options" type="Popup"]
 anchor_right = 1.0
 margin_bottom = 600.0
-grow_horizontal = 2
-grow_vertical = 2
 script = ExtResource( 1 )
 
 [node name="OptionsBackground" type="TextureRect" parent="."]
