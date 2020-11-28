@@ -7,7 +7,7 @@ func _on_ResumeButton_pressed():
 	
 func _on_RestartButton_pressed():
 	# Restart
-	get_tree().change_scene("res://Scenes/First_Level/First_Level.tscn")
+	get_tree().reload_current_scene()
 	get_tree().paused = false
 	
 func _on_OptionsButton_pressed():
