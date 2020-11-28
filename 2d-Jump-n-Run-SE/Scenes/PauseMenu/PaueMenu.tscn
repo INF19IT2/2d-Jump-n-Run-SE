@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/PauseMenu/PauseMenu.gd" type="Script" id=1]
 [ext_resource path="res://imagesFiles/Main_Scene/StartLevel_Button.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Options/OptionsMenu.tscn" type="PackedScene" id=3]
 
 [node name="PauseMenu" type="Popup"]
 pause_mode = 2
@@ -157,6 +158,8 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Options" parent="." instance=ExtResource( 3 )]
 [connection signal="pressed" from="ResumeButton" to="." method="_on_ResumeButton_pressed"]
 [connection signal="pressed" from="RestartButton" to="." method="_on_RestartButton_pressed"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_OptionsButton_pressed"]
