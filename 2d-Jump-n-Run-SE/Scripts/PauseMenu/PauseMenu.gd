@@ -13,7 +13,6 @@ func _on_RestartButton_pressed():
 func _on_OptionsButton_pressed():
 	# Options
 	get_node("Options").popup()
-	get_tree().paused = false
 	
 func _on_MainMenuButton_pressed():
 	# Main Menu

@@ -5,6 +5,7 @@
 [ext_resource path="res://imagesFiles/Main_Scene/grey_background.png" type="Texture" id=3]
 
 [node name="Options" type="Popup"]
+pause_mode = 2
 anchor_right = 1.0
 margin_bottom = 600.0
 script = ExtResource( 1 )
