@@ -52,6 +52,10 @@ shoot={
  ]
 }
 
+[layer_]
+
+Layer=false
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"

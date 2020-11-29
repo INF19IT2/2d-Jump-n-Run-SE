@@ -1,19 +1,29 @@
-extends Sprite
+extends Area2D
 
-const VELOCITY = Vector2(200, 0)
+var velocity = Vector2()
+export var speed = 400
+export var damage = 5
+export var lifetime = 1
 
-const maxLifeTime = 2
-var lifeTime = 0
-
+func start(_position, _facingRight):
+	$Lifetime.wait_time = lifetime
+	position = _position
+	velocity.x = speed if _facingRight else -speed
 
 func _process(delta):
 	move(delta)
-	removeAfterTimeLimit()
 
 func move(delta):
-	global_position += VELOCITY * delta
-	lifeTime += delta
+	position += velocity * delta
 
-func removeAfterTimeLimit():
-	if lifeTime > maxLifeTime :
-		queue_free()
+func _on_Projectile_body_entered(body):
+	if body.get_name() != "Player":
+		dissolveProjectile()
+	if body.has_method('take_damage'):
+		body.take_damage(damage)
+
+func _on_Lifetime_timeout():
+	dissolveProjectile()
+
+func dissolveProjectile():
+	queue_free()

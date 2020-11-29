@@ -9,10 +9,11 @@ export var gravity : int = 800
 const PROJECTILE = preload("res://Scenes/Objects/Projectile.tscn")
 
 #time between shots
-const FIRERATE = 0.25
-var reloading = 0.0
+const PROJECTILE_COOLDOWN_TIME = 0.25
+var projectileCooldown = 0.0
 
 var velocity = Vector2()
+var facingRight = true
 
 #gets called 60 times a second
 func _physics_process(delta):
@@ -21,17 +22,19 @@ func _physics_process(delta):
 	#define movement
 	if Input.is_action_pressed("move_right"):
 		velocity.x += speed
+		facingRight = true
 	if Input.is_action_pressed("move_left"):
 		velocity.x -= speed
+		facingRight = false
 	
-	reloading -= delta
-	#create bullet on player position
+	#create projectile on player position
 	if Input.is_action_just_pressed("shoot"):
-		if reloading <= 0.0:
+		if projectileCooldown <= 0.0:
 			var projectile = PROJECTILE.instance()
-			projectile.global_position = global_position
+			projectile.start(position, facingRight)
 			get_parent().add_child(projectile)
-			reloading = FIRERATE
+			projectileCooldown = PROJECTILE_COOLDOWN_TIME
+	projectileCooldown -= delta
 	
 	#gravity
 	velocity.y += gravity * delta
