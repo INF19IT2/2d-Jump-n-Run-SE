@@ -10,7 +10,6 @@ func _ready():
 	resolutionDropdown.set_item_text(0,String(currentResolution[0]) + "x" + String(currentResolution[1]))
 	resolutions[0] = Vector2(currentResolution[0],currentResolution[1])
 
-
 func _on_ResolutionOptions_item_selected(index):
 	var selectedResolution = resolutions[resolutionDropdown.get_selected_id()]
 	changeWindowAndPopupSize(selectedResolution)
@@ -30,5 +29,6 @@ func _on_TextureButton_pressed():
 func changeWindowAndPopupSize(newWindowSize):
 	OS.window_size = newWindowSize
 	OS.center_window()
+	get_tree().reload_current_scene()
 	hide()
 	popup_centered(newWindowSize)

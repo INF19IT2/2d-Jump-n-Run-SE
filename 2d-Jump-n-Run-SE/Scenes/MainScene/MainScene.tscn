@@ -64,8 +64,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Options" parent="OptionsButton" instance=ExtResource( 7 )]
-
 [node name="StartLevelButton" type="TextureButton" parent="."]
 anchor_left = 0.333
 anchor_top = 0.544
@@ -79,6 +77,12 @@ texture_normal = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Options" parent="." instance=ExtResource( 7 )]
+margin_left = 1.37811
+margin_top = 3.53987
+margin_right = 1.37817
+margin_bottom = 3.53986
 [connection signal="pressed" from="ExitButton" to="." method="_on_ExitButton_pressed"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_OptionsButton_pressed"]
 [connection signal="pressed" from="StartLevelButton" to="." method="_on_StartLevelButton_pressed"]

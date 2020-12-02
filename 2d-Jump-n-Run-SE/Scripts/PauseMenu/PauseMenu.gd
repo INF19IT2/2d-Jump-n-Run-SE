@@ -12,7 +12,7 @@ func _on_RestartButton_pressed():
 	
 func _on_OptionsButton_pressed():
 	# Options
-	get_node("Options").popup()
+	get_node("Options").popup_centered(OS.window_size)
 	
 func _on_MainMenuButton_pressed():
 	# Main Menu
