@@ -48,7 +48,7 @@ func _physics_process(delta):
 		facingRight = false
 	
 	#create projectile on player position
-	if Input.is_action_just_pressed("shoot"):  #and is_ducked == false:
+	if Input.is_action_just_pressed("shoot") and is_ducked == false:
 		if projectileCooldown <= 0.0:
 			var projectile = PROJECTILE.instance()
 			projectile.start(position, facingRight)
