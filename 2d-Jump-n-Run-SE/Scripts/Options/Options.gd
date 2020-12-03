@@ -27,8 +27,7 @@ func _on_TextureButton_pressed():
 
 
 func changeWindowAndPopupSize(newWindowSize):
+	get_viewport().size = newWindowSize
 	OS.window_size = newWindowSize
 	OS.center_window()
-	get_tree().reload_current_scene()
-	hide()
 	popup_centered(newWindowSize)
