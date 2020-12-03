@@ -16,10 +16,12 @@ func _on_ResolutionOptions_item_selected(index):
 
 
 func _on_CheckButton_toggled(button_pressed):
+	OS.window_fullscreen = button_pressed
 	if(button_pressed):
 		changeWindowAndPopupSize(OS.get_screen_size())
 	else:
 		changeWindowAndPopupSize(resolutions[0])
+	
 
 
 func _on_TextureButton_pressed():
