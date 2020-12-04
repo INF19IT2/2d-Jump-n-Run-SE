@@ -95,7 +95,7 @@ func _physics_process(delta):
 		take_damage(5)
 		
 func take_damage(dmg):
-	if health > 0:
+	if health > dmg:
 		health -= dmg
 		emit_signal("player_stats_changed", self)
 	else:
