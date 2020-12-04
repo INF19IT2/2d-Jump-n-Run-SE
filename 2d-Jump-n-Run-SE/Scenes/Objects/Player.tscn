@@ -1,47 +1,56 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://placeholder.png" type="Texture" id=1]
+
+[ext_resource path="res://imagesFiles/Player_Model/Virus.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player_Modell/Player_Script.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Objects/HealthBar.tscn" type="PackedScene" id=3]
+[ext_resource path="res://imagesFiles/Player_Model/Virus_Crouch.png" type="Texture" id=4]
+[ext_resource path="res://imagesFiles/Player_Model/Virus_Jump.png" type="Texture" id=5]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32.5065, 64 )
+[sub_resource type="CircleShape2D" id=2]
+radius = 59.2485
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 32.5108, 32 )
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 30.3794
+height = 46.1666
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( -2, 0 )
 script = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, 1.90735e-06 )
-scale = Vector2( 0.054, 0.142222 )
+[node name="Virus" type="Sprite" parent="."]
+scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 1 )
 
-[node name="Sprite2" type="Sprite" parent="."]
+[node name="Virus_Crouch" type="Sprite" parent="."]
 visible = false
-position = Vector2( 0, 32 )
-scale = Vector2( 0.054, 0.071 )
-texture = ExtResource( 1 )
+position = Vector2( 0, 28.911 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 4 )
+
+
+[node name="Virus_Jump" type="Sprite" parent="."]
+visible = false
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 0.420448 )
-shape = SubResource( 1 )
 
-[node name="Ducking_CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 32 )
-scale = Vector2( 1, 0.99 )
 shape = SubResource( 2 )
-disabled = true
+
+[node name="ducking_CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 3.047, 28.859 )
+rotation = 1.5708
+shape = SubResource( 3 )
 
 [node name="HealthBar" parent="." instance=ExtResource( 3 )]
 
 [node name="Label" type="Label" parent="."]
-margin_left = -19.799
-margin_top = -89.8026
-margin_right = 20.201
-margin_bottom = -75.8026
+margin_left = -20.0
+margin_top = -78.356
+margin_right = 20.0
+margin_bottom = -64.356
 __meta__ = {
 "_edit_use_anchors_": false
 }
