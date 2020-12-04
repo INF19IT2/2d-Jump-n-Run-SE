@@ -59,8 +59,11 @@ func _physics_process(delta):
 	projectileCooldown -= delta
 	
 	if is_on_floor():
-		player_standing.visible = true
 		player_jump.visible = false
+		player_standing.visible = true
+	elif not is_on_floor():
+		player_standing.visible = false
+		player_jump.visible = true
 		
 	#gravity
 	velocity.y += gravity * delta
@@ -79,7 +82,6 @@ func _physics_process(delta):
 		player_jump.visible = true
 		player_standing.visible = false
 		
-	#var player_pos = player.get_position_in_parent()
 	if Input.is_action_pressed("move_down") and is_on_floor():
 		standing_collision.disabled = true
 		crouching_collision.disabled = false
