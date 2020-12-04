@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/First_Level/first_level_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/PauseMenu/PaueMenu.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Objects/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Objects/Collectable.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Objects/Dummy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Objects/Puddle.tscn" type="PackedScene" id=6]
 
 [node name="Node2D" type="Node2D"]
 
@@ -45,3 +46,7 @@ position = Vector2( 24.2465, 234.507 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 5 )]
 position = Vector2( 801, 310 )
+
+[node name="Puddle" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1061, 525 )
+z_index = -1
