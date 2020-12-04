@@ -59,4 +59,3 @@ position = Vector2( 507.315, 472.74 )
 [node name="Puddle" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1061, 525 )
 z_index = -1
-
