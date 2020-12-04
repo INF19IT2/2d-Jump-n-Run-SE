@@ -11,7 +11,7 @@ func _ready():
 # Collision function
 func _on_Area2D_body_entered(body):
 	if body.get_name() == "Player":
-		var player_size = 64
+		var player_size = 32
 		
 		if ((body.global_position.y + player_size) <= self.global_position.y - 32):
 			timer.set_wait_time(waittime)

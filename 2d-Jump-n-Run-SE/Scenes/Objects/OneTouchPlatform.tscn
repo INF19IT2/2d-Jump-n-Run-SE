@@ -3,10 +3,10 @@
 [ext_resource path="res://placeholder.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Objects/OneTouchPlatform.gd" type="Script" id=2]
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 32.2262 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 33.4204, 34.4541 )
 
 [node name="OneTouchPlatform" type="StaticBody2D"]
@@ -17,7 +17,7 @@ texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2( 1.009, 0.994 )
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource( 2 )
@@ -25,7 +25,7 @@ script = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 visible = false
 position = Vector2( 0, -0.1 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="Timer" type="Timer" parent="Area2D"]
 wait_time = 0.5
