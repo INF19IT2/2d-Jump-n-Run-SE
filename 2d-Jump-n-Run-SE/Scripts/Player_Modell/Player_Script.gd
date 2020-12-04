@@ -36,19 +36,23 @@ var facingRight = true
 
 var pos = Vector2()
 
-func set_checkpoint(var check):
-	pos = check
-	print(pos)
 
 #gets called when the node and its children have entered the scene tree
 func _ready():
 	emit_signal("player_stats_changed", self)
 	print(player_standing.get_global_position())
+	
 
+
+func set_checkpoint(var check):
+	pos = check
 
 
 func respawn():
-	get_tree().reload_current_scene()
+	self.position = pos
+	health = health_max
+	emit_signal("player_stats_changed", self)
+
 
 #gets called 60 times a second
 func _physics_process(delta):
@@ -82,7 +86,7 @@ func _physics_process(delta):
 		velocity.y -= jumpForce
 		
 	#define running
-	if Input.is_action_pressed("running") and is_moving:
+	if Input.is_action_pressed("running") and is_moving and !is_ducked:
 		if(facingRight):
 			velocity.x += speed
 		elif(!facingRight):

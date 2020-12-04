@@ -13,6 +13,6 @@ func _ready():
 
 func _on_Area2D_body_entered(body):
 	if (body.has_method("set_checkpoint")):
-		body.set_checkpoint(checkpoint_active.get_global_position())
+		body.set_checkpoint(body.get_position().floor())
 		checkpoint_default.visible = false
 		checkpoint_active.visible = true
