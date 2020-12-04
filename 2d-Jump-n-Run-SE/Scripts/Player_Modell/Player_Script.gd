@@ -25,7 +25,9 @@ var projectileCooldown = 0.0
 var health : int = 100
 var health_max : int = 100
 
+signal player_dead
 signal player_stats_changed
+
 
 var coins : int = 0
 
@@ -44,6 +46,9 @@ func _ready():
 	print(player_standing.get_global_position())
 
 
+
+func respawn():
+	get_tree().reload_current_scene()
 
 #gets called 60 times a second
 func _physics_process(delta):
@@ -105,14 +110,19 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector2.UP)
 
 	if Input.is_action_just_pressed("test_dmg"):
-		if health > 10:
-			health -= 10
-			emit_signal("player_stats_changed", self)
-		elif health <= 10:
-			health = 0
-			emit_signal("player_stats_changed", self)
-			print("Dead")
-
+		take_damage(10)
+		
+	if get_position().floor().y > 600:
+		take_damage(5)
+		
+func take_damage(dmg):
+	if health > dmg:
+		health -= dmg
+		emit_signal("player_stats_changed", self)
+	else:
+		print("Dead")
+		respawn()
+	
 func add_collectable():
 	coins += 1
 	var lab = get_node("Label")
