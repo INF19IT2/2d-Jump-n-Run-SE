@@ -32,9 +32,18 @@ var coins : int = 0
 var velocity = Vector2()
 var facingRight = true
 
+var pos = Vector2()
+
+func set_checkpoint(var check):
+	pos = check
+	print(pos)
+
 #gets called when the node and its children have entered the scene tree
 func _ready():
 	emit_signal("player_stats_changed", self)
+	print(player_standing.get_global_position())
+
+
 
 #gets called 60 times a second
 func _physics_process(delta):

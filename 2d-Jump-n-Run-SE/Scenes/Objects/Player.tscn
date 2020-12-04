@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://placeholder.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player_Modell/Player_Script.gd" type="Script" id=2]
@@ -29,7 +29,6 @@ texture = ExtResource( 1 )
 position = Vector2( 0, 0.420448 )
 shape = SubResource( 1 )
 
-
 [node name="Ducking_CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 32 )
 scale = Vector2( 1, 0.99 )
@@ -46,5 +45,3 @@ margin_bottom = -75.8026
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-
