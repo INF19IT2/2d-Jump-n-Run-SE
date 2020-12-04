@@ -28,4 +28,4 @@ func _on_StartLevelButton_pressed():
 
 
 func _on_OptionsButton_pressed():
-	get_tree().change_scene("res://Scenes/Options/OptionsMenu.tscn")
+	get_node("Options").popup_centered(OS.window_size)

@@ -1,14 +1,19 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/PauseMenu/PauseMenu.gd" type="Script" id=1]
 [ext_resource path="res://imagesFiles/Main_Scene/StartLevel_Button.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Options/OptionsMenu.tscn" type="PackedScene" id=3]
 
 [node name="PauseMenu" type="Popup"]
 pause_mode = 2
-margin_left = 334.886
-margin_top = 79.7957
-margin_right = 634.886
-margin_bottom = 479.796
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = -200.0
+margin_right = 150.0
+margin_bottom = 200.0
 popup_exclusive = true
 script = ExtResource( 1 )
 __meta__ = {
@@ -16,20 +21,21 @@ __meta__ = {
 }
 
 [node name="Background" type="ColorRect" parent="."]
-margin_left = 4.0
-margin_top = -2.0
-margin_right = 304.0
-margin_bottom = 398.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 color = Color( 0.313726, 0.313726, 0.313726, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ResumeButton" type="TextureButton" parent="."]
-margin_left = 60.0
-margin_top = 13.0
-margin_right = 242.0
-margin_bottom = 106.0
+anchor_left = 0.2
+anchor_top = 0.032
+anchor_right = 0.2
+anchor_bottom = 0.032
+margin_top = 0.199989
+margin_right = 182.0
+margin_bottom = 93.2
 rect_pivot_offset = Vector2( -343, 177 )
 texture_normal = ExtResource( 2 )
 __meta__ = {
@@ -37,17 +43,22 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="ResumeButton"]
-margin_left = 25.0
-margin_top = 15.0
-margin_right = 152.0
-margin_bottom = 68.0
+anchor_left = 0.137
+anchor_top = 0.161
+anchor_right = 0.137
+anchor_bottom = 0.161
+margin_left = 0.0659981
+margin_top = 0.0269985
+margin_right = 127.066
+margin_bottom = 53.027
 mouse_filter = 2
 
 [node name="Label" type="Label" parent="ResumeButton"]
+anchor_bottom = 0.054
 margin_left = 7.0
 margin_top = 5.0
 margin_right = 177.0
-margin_bottom = 80.0
+margin_bottom = 74.978
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Resume"
 align = 1
@@ -57,10 +68,14 @@ __meta__ = {
 }
 
 [node name="RestartButton" type="TextureButton" parent="."]
-margin_left = 65.0
-margin_top = 102.0
-margin_right = 247.0
-margin_bottom = 195.0
+anchor_left = 0.217
+anchor_top = 0.255
+anchor_right = 0.217
+anchor_bottom = 0.255
+margin_left = -0.100006
+margin_top = -9.15527e-05
+margin_right = 181.9
+margin_bottom = 92.9999
 rect_pivot_offset = Vector2( -343, 177 )
 texture_normal = ExtResource( 2 )
 __meta__ = {
@@ -68,20 +83,25 @@ __meta__ = {
 }
 
 [node name="ColorRect4" type="ColorRect" parent="RestartButton"]
-margin_left = 27.0
-margin_top = 15.0
-margin_right = 154.0
-margin_bottom = 68.0
+anchor_left = 0.148
+anchor_top = 0.161
+anchor_right = 0.148
+anchor_bottom = 0.161
+margin_left = 0.0639992
+margin_top = 0.0269985
+margin_right = 127.064
+margin_bottom = 53.027
 mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label4" type="Label" parent="RestartButton"]
+anchor_bottom = 0.065
 margin_left = 5.0
 margin_top = 6.0
 margin_right = 175.0
-margin_bottom = 81.0
+margin_bottom = 74.955
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Restart"
 align = 1
@@ -91,10 +111,14 @@ __meta__ = {
 }
 
 [node name="OptionsButton" type="TextureButton" parent="."]
-margin_left = 66.0
-margin_top = 194.0
-margin_right = 248.0
-margin_bottom = 287.0
+anchor_left = 0.22
+anchor_top = 0.485
+anchor_right = 0.22
+anchor_bottom = 0.485
+margin_left = -7.62939e-06
+margin_top = -0.000152588
+margin_right = 182.0
+margin_bottom = 92.9998
 rect_pivot_offset = Vector2( -343, 177 )
 texture_normal = ExtResource( 2 )
 __meta__ = {
@@ -102,20 +126,27 @@ __meta__ = {
 }
 
 [node name="ColorRect3" type="ColorRect" parent="OptionsButton"]
-margin_left = 28.0
-margin_top = 16.0
-margin_right = 155.0
-margin_bottom = 69.0
+anchor_left = 0.154
+anchor_top = 0.172
+anchor_right = 0.154
+anchor_bottom = 0.172
+margin_left = -0.0280018
+margin_top = 0.00399971
+margin_right = 126.972
+margin_bottom = 53.004
 mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label3" type="Label" parent="OptionsButton"]
+anchor_top = 0.086
+anchor_right = 0.044
+anchor_bottom = 0.086
 margin_left = 8.0
-margin_top = 8.0
-margin_right = 178.0
-margin_bottom = 83.0
+margin_top = 0.00199986
+margin_right = 169.992
+margin_bottom = 75.002
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Options"
 align = 1
@@ -125,10 +156,14 @@ __meta__ = {
 }
 
 [node name="MainMenuButton" type="TextureButton" parent="."]
-margin_left = 70.0
-margin_top = 290.0
-margin_right = 252.0
-margin_bottom = 383.0
+anchor_left = 0.233
+anchor_top = 0.725
+anchor_right = 0.233
+anchor_bottom = 0.725
+margin_left = 0.0999985
+margin_top = -0.000244141
+margin_right = 182.1
+margin_bottom = 92.9998
 rect_pivot_offset = Vector2( -343, 177 )
 texture_normal = ExtResource( 2 )
 __meta__ = {
@@ -136,20 +171,28 @@ __meta__ = {
 }
 
 [node name="ColorRect2" type="ColorRect" parent="MainMenuButton"]
-margin_left = 24.0
-margin_top = 15.0
-margin_right = 151.0
-margin_bottom = 68.0
+anchor_left = 0.132
+anchor_top = 0.161
+anchor_right = 0.132
+anchor_bottom = 0.161
+margin_left = -0.0240002
+margin_top = 0.0269985
+margin_right = 126.976
+margin_bottom = 53.027
 mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label2" type="Label" parent="MainMenuButton"]
-margin_left = 6.0
-margin_top = 7.0
-margin_right = 176.0
-margin_bottom = 82.0
+anchor_left = 0.033
+anchor_top = 0.075
+anchor_right = 0.033
+anchor_bottom = 0.075
+margin_left = -0.00600004
+margin_top = 0.0249996
+margin_right = 169.994
+margin_bottom = 75.025
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Main Menu"
 align = 1
@@ -157,6 +200,8 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Options" parent="." instance=ExtResource( 3 )]
 [connection signal="pressed" from="ResumeButton" to="." method="_on_ResumeButton_pressed"]
 [connection signal="pressed" from="RestartButton" to="." method="_on_RestartButton_pressed"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_OptionsButton_pressed"]
