@@ -20,6 +20,7 @@ func _on_Puddle_body_exited(body):
 	if body.has_method('get_name'):
 		if body.get_name() == "Player":
 			overlapsPlayer = false
+			temp = 1
 
 func _process(delta):
 	if overlapsPlayer && player != null:
