@@ -4,10 +4,11 @@ extends KinematicBody2D
 
 var ducking_height: int = 0
 var is_ducked: bool = false
-onready var standing_collision = $CollisionPolygon2D
-onready var crouching_collision = $ducking_CollisionPolygon2D
+onready var standing_collision = $CollisionShape2D
+onready var crouching_collision = $ducking_CollisionShape2D
 onready var player_standing = $Virus
 onready var player_ducked = $Virus_Crouch
+onready var player_jump = $Virus_Jump
 
 export var speed : int = 200
 export var jumpForce : int = 500
@@ -46,10 +47,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("move_left"):
 		velocity.x -= speed
 		facingRight = false
-	if velocity.length() > 0:
-		$AnimatedSprite.play()
-	else:
-		$AnimatedSprite.stop()
+
 	
 	#create projectile on player position
 	if Input.is_action_just_pressed("shoot") and is_ducked == false:
@@ -60,28 +58,41 @@ func _physics_process(delta):
 			projectileCooldown = PROJECTILE_COOLDOWN_TIME
 	projectileCooldown -= delta
 	
+	if is_on_floor():
+		player_standing.visible = true
+		player_jump.visible = false
+		
 	#gravity
 	velocity.y += gravity * delta
 	
+	if velocity.x != 0:
+		player_standing.flip_v = false
+		player_standing.flip_h = velocity.x < 0
+		player_ducked.flip_v = false
+		player_ducked.flip_h = velocity.x < 0
+	elif velocity.y != 0:
+		player_jump.flip_v = velocity.y > 0
+		
 	#define Jumping
 	if Input.is_action_just_pressed("move_up") and is_on_floor() and !is_ducked:
 		velocity.y -= jumpForce
-		$AnimatedSprite.animation = "jump"
-		
+		player_jump.visible = true
+		player_standing.visible = false
 		
 	#var player_pos = player.get_position_in_parent()
 	if Input.is_action_pressed("move_down") and is_on_floor():
 		standing_collision.disabled = true
 		crouching_collision.disabled = false
-		$AnimatedSprite.animation = "crouch"
+		player_ducked.visible = true
+		player_standing.visible = false
 		is_ducked=true
 	
-	if !Input.is_action_pressed("move_down"):
+	if not Input.is_action_pressed("move_down"):
 		standing_collision.disabled = false
 		crouching_collision.disabled = true
 		is_ducked = false
-		$AnimatedSprite.animation = "walk"
-		#player -= 48
+		player_standing.visible = true
+		player_ducked.visible = false
 	
 	#Applying Velocity
 		#Vector2.UP -> Ground is facing up
