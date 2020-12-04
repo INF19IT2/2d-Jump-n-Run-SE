@@ -19,8 +19,8 @@ func move(delta):
 func _on_Projectile_body_entered(body):
 	if body.get_name() != "Player":
 		dissolveProjectile()
-	if body.has_method('take_damage'):
-		body.take_damage(damage)
+		if body.has_method('take_damage'):
+			body.take_damage(damage)
 
 func _on_Lifetime_timeout():
 	dissolveProjectile()
