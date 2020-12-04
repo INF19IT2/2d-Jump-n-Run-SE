@@ -4,10 +4,10 @@ extends KinematicBody2D
 
 var ducking_height: int = 0
 var is_ducked: bool = false
-onready var standing_collision = $CollisionShape2D
-onready var crouching_collision = $Ducking_CollisionShape2D
-onready var player_standing = $Sprite
-onready var player_ducked = $Sprite2
+onready var standing_collision = $CollisionPolygon2D
+onready var crouching_collision = $ducking_CollisionPolygon2D
+onready var player_standing = $Virus
+onready var player_ducked = $Virus_Crouch
 
 export var speed : int = 200
 export var jumpForce : int = 500
@@ -46,6 +46,10 @@ func _physics_process(delta):
 	if Input.is_action_pressed("move_left"):
 		velocity.x -= speed
 		facingRight = false
+	if velocity.length() > 0:
+		$AnimatedSprite.play()
+	else:
+		$AnimatedSprite.stop()
 	
 	#create projectile on player position
 	if Input.is_action_just_pressed("shoot") and is_ducked == false:
@@ -62,21 +66,21 @@ func _physics_process(delta):
 	#define Jumping
 	if Input.is_action_just_pressed("move_up") and is_on_floor() and !is_ducked:
 		velocity.y -= jumpForce
+		$AnimatedSprite.animation = "jump"
+		
 		
 	#var player_pos = player.get_position_in_parent()
 	if Input.is_action_pressed("move_down") and is_on_floor():
 		standing_collision.disabled = true
 		crouching_collision.disabled = false
-		player_standing.visible = false
-		player_ducked.visible = true
+		$AnimatedSprite.animation = "crouch"
 		is_ducked=true
 	
 	if !Input.is_action_pressed("move_down"):
 		standing_collision.disabled = false
 		crouching_collision.disabled = true
 		is_ducked = false
-		player_standing.visible = true
-		player_ducked.visible = false
+		$AnimatedSprite.animation = "walk"
 		#player -= 48
 	
 	#Applying Velocity
