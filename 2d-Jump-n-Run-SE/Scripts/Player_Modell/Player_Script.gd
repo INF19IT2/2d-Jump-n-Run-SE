@@ -35,7 +35,7 @@ var coins : int = 0
 var velocity = Vector2()
 var facingRight = true
 
-var pos = Vector2()
+var pos = Vector2(155, 186)
 
 
 #gets called when the node and its children have entered the scene tree

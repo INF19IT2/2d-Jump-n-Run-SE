@@ -1,16 +1,15 @@
 [gd_scene load_steps=8 format=2]
 
-
 [ext_resource path="res://imagesFiles/Player_Model/Virus.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player_Modell/Player_Script.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Objects/HealthBar.tscn" type="PackedScene" id=3]
 [ext_resource path="res://imagesFiles/Player_Model/Virus_Crouch.png" type="Texture" id=4]
 [ext_resource path="res://imagesFiles/Player_Model/Virus_Jump.png" type="Texture" id=5]
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=1]
 radius = 59.2485
 
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 30.3794
 height = 46.1666
 
@@ -28,21 +27,19 @@ position = Vector2( 0, 28.911 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 4 )
 
-
 [node name="Virus_Jump" type="Sprite" parent="."]
 visible = false
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="ducking_CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2( 3.047, 28.859 )
 rotation = 1.5708
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="HealthBar" parent="." instance=ExtResource( 3 )]
 
