@@ -71,7 +71,7 @@ func _physics_process(delta):
 	if is_on_floor():
 		player_jump.visible = false
 		player_standing.visible = true
-	elif not is_on_floor():
+	elif not is_on_floor() and not is_ducked:
 		player_standing.visible = false
 		player_jump.visible = true
 		
