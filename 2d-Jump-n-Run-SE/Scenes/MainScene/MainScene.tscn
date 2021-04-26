@@ -5,7 +5,7 @@
 [ext_resource path="res://imagesFiles/Main_Scene/Exit_Button.png" type="Texture" id=3]
 [ext_resource path="res://imagesFiles/Main_Scene/Options_Button.png" type="Texture" id=4]
 [ext_resource path="res://imagesFiles/Main_Scene/StartLevel_Button.png" type="Texture" id=5]
-[ext_resource path="res://Scripts/MainScene_Interaction/MainScene.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/MainScene/MainScene.gd" type="Script" id=6]
 [ext_resource path="res://Scenes/Options/OptionsMenu.tscn" type="PackedScene" id=7]
 
 [node name="MainScene" type="TextureRect"]
