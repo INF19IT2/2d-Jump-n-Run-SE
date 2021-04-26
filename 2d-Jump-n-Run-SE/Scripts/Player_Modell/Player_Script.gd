@@ -95,7 +95,7 @@ func _physics_process(delta):
 		player_standing.flip_h = velocity.x < 0
 		player_ducked.flip_v = false
 		player_ducked.flip_h = velocity.x < 0
-	elif velocity.y != 0:
+	if velocity.y != 0:
 		player_jump.flip_v = velocity.y > 0
 
 	#define Jumping
