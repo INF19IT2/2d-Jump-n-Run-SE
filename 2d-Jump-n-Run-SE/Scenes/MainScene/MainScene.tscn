@@ -3,7 +3,7 @@
 [ext_resource path="res://imagesFiles/Main_Scene/High-Score_Button.png" type="Texture" id=1]
 [ext_resource path="res://imagesFiles/Main_Scene/grey_background.png" type="Texture" id=2]
 [ext_resource path="res://imagesFiles/Main_Scene/Exit_Button.png" type="Texture" id=3]
-[ext_resource path="res://imagesFiles/Main_Scene/Options_Button.png" type="Texture" id=4]
+[ext_resource path="res://imagesFiles/Main_Scene/2699.png" type="Texture" id=4]
 [ext_resource path="res://imagesFiles/Main_Scene/StartLevel_Button.png" type="Texture" id=5]
 [ext_resource path="res://Scripts/MainScene_Interaction/MainScene.gd" type="Script" id=6]
 [ext_resource path="res://Scenes/Options/OptionsMenu.tscn" type="PackedScene" id=7]
@@ -41,24 +41,23 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -90.5
-margin_top = -108.0
-margin_right = 91.5
-margin_bottom = -18.0
+margin_left = -94.7379
+margin_top = 8.54092
+margin_right = 87.2621
+margin_bottom = 98.5409
 texture_normal = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="OptionsButton" type="TextureButton" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -90.5
-margin_top = 4.0
-margin_right = 91.5
-margin_bottom = 94.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 79.0
+margin_top = 42.0
+margin_right = -434.0
+margin_bottom = -46.0
+rect_scale = Vector2( 0.2, 0.2 )
 texture_normal = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -69,10 +68,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -90.5
-margin_top = -210.0
-margin_right = 91.5
-margin_bottom = -120.0
+margin_left = -96.8568
+margin_top = -94.5186
+margin_right = 85.1432
+margin_bottom = -4.51855
 texture_normal = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -83,6 +82,7 @@ margin_left = 1.37811
 margin_top = 3.53987
 margin_right = 1.37817
 margin_bottom = 3.53986
+
 [connection signal="pressed" from="ExitButton" to="." method="_on_ExitButton_pressed"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_OptionsButton_pressed"]
 [connection signal="pressed" from="StartLevelButton" to="." method="_on_StartLevelButton_pressed"]
