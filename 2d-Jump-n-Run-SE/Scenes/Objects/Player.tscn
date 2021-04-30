@@ -18,6 +18,7 @@ position = Vector2( -2, 0 )
 script = ExtResource( 2 )
 
 [node name="Virus" type="Sprite" parent="."]
+visible = false
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 1 )
 
@@ -33,6 +34,7 @@ scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource( 1 )
 
 [node name="ducking_CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -48,6 +50,16 @@ margin_left = -20.0
 margin_top = -78.356
 margin_right = 20.0
 margin_bottom = -64.356
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 22.0271
+margin_top = -78.6539
+margin_right = 86.0271
+margin_bottom = -64.6539
+custom_colors/font_color = Color( 0.901961, 0.0666667, 0.0666667, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

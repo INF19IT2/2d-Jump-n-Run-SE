@@ -151,3 +151,5 @@ func add_collectable():
 	coins += 1
 	var lab = get_node("Label")
 	lab.set_text(str(coins))
+	var lab2 = get_node("Label2")
+	lab2.set_text(str(coins))
