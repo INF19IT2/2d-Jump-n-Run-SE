@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Dummy/Dummy.gd" type="Script" id=1]
 [ext_resource path="res://placeholder.png" type="Texture" id=2]
+[ext_resource path="res://imagesFiles/Dummy/placeholder_infected.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32.4886, 72 )
@@ -15,3 +16,12 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+
+[node name="Infectiontimer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="Sprite2" type="Sprite" parent="."]
+visible = false
+scale = Vector2( 0.054, 0.16 )
+texture = ExtResource( 3 )
+[connection signal="timeout" from="Infectiontimer" to="." method="_on_Infectiontimer_timeout"]

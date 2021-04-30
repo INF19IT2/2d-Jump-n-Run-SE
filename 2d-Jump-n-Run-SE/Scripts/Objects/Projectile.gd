@@ -21,6 +21,8 @@ func _on_Projectile_body_entered(body):
 		dissolveProjectile()
 		if body.has_method('take_damage'):
 			body.take_damage(damage)
+		if body.has_method('get_infected'):
+			body.get_infected()
 
 func _on_Lifetime_timeout():
 	dissolveProjectile()
