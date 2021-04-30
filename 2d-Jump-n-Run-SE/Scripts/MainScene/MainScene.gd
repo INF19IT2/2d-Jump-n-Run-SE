@@ -4,7 +4,7 @@ extends TextureRect
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-
+var level_folder = "res://Scenes/Levels/"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,8 +21,7 @@ func _on_ExitButton_pressed():
 
 
 func _on_StartLevelButton_pressed():
-	get_tree().change_scene("res://Scenes/LevelSelection/LevelSelection.tscn")
-
+	get_tree().change_scene(level_folder+"First_Level/First_Level.tscn")
 
 
 func _on_OptionsButton_pressed():
