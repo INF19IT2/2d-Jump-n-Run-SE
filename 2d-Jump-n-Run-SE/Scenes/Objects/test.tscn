@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://imagesFiles/Player_Model/dreh_Animation/drehAnimation03.png" type="Texture" id=1]
 [ext_resource path="res://imagesFiles/Player_Model/dreh_Animation/drehAnimation06.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://imagesFiles/Player_Model/dreh_Animation/drehAnimation09.png" type="Texture" id=11]
 [ext_resource path="res://imagesFiles/Player_Model/dreh_Animation/drehAnimation04.png" type="Texture" id=12]
 [ext_resource path="res://Scripts/Objects/test.gd" type="Script" id=13]
+[ext_resource path="res://Scenes/Objects/HealthBar.tscn" type="PackedScene" id=14]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -23,13 +24,12 @@ animations = [ {
 } ]
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 23.6664
+radius = 15.7506
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 script = ExtResource( 13 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 1 )
 animation = "walk"
 
@@ -41,3 +41,14 @@ current = true
 zoom = Vector2( 0.4, 0.4 )
 smoothing_enabled = true
 smoothing_speed = 2.0
+
+[node name="HealthBar" parent="." instance=ExtResource( 14 )]
+
+[node name="Label" type="Label" parent="."]
+margin_left = -26.0294
+margin_top = -33.0373
+margin_right = 13.9706
+margin_bottom = -19.0373
+__meta__ = {
+"_edit_use_anchors_": false
+}
