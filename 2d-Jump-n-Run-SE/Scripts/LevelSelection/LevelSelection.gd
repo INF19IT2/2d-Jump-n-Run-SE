@@ -1,5 +1,7 @@
 extends TextureRect
 
+var level_folder = "res://Scenes/Levels/"
+
 func _ready():
 	pass # Replace with function body.
 
@@ -7,5 +9,12 @@ func _ready():
 
 
 func _on_ExitButton_pressed():
-	OS.alert('This is your message', 'Message Title')
-	#get_tree().change_scene("res://Scenes/MainScene/MainScene.tscn")
+	get_tree().change_scene("res://Scenes/MainScene/MainScene.tscn")
+
+
+func _on_Level1Button_pressed():
+	get_tree().change_scene(level_folder +  "/First_Level/First_Level.tscn")
+
+
+func _on_Level2Button_pressed():
+	get_tree().change_scene(level_folder + "/Second_Level/Second_Level.tscn")

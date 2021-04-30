@@ -9,6 +9,7 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 1 )
+expand = true
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -27,7 +28,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="Level1Button" type="TextureButton" parent="."]
 anchor_left = 0.411
 anchor_right = 0.589
 anchor_bottom = 0.15
@@ -37,4 +38,47 @@ texture_normal = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Level1Text" type="RichTextLabel" parent="Level1Button"]
+anchor_left = 1.051
+anchor_top = 0.424
+anchor_right = 1.27
+anchor_bottom = 0.869
+margin_left = -0.0737457
+margin_top = 0.0384064
+margin_right = 0.0682373
+margin_bottom = -0.0115891
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level2Button" type="TextureButton" parent="."]
+anchor_left = 0.411
+anchor_top = 0.15
+anchor_right = 0.589
+anchor_bottom = 0.3
+margin_top = -0.0923615
+margin_right = -0.328918
+margin_bottom = -90.0924
+texture_normal = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level2Text" type="RichTextLabel" parent="Level2Button"]
+anchor_left = 1.047
+anchor_top = 0.407
+anchor_right = 1.266
+anchor_bottom = 0.852
+margin_left = -0.0857544
+margin_top = 0.00888443
+margin_right = 0.0562592
+margin_bottom = -0.0411224
+text = "2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="ExitButton" to="." method="_on_ExitButton_pressed"]
+[connection signal="pressed" from="Level1Button" to="." method="_on_Level1Button_pressed"]
+[connection signal="pressed" from="Level2Button" to="." method="_on_Level2Button_pressed"]
