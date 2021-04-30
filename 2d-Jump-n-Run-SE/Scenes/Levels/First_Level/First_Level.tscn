@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Scenes/First_Level/first_level_tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://Scenes/Levels/Second_Level/first_level_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/PauseMenu/PaueMenu.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Objects/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Objects/Collectable.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Objects/Dummy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Objects/Collectable.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Objects/Dummy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Objects/Player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Objects/OneTouchPlatform.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Objects/Checkpoint.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Objects/Puddle.tscn" type="PackedScene" id=8]
@@ -22,39 +22,39 @@ tile_set = ExtResource( 1 )
 format = 1
 tile_data = PoolIntArray( 65535, 0, 0, 21, 0, 0, 131071, 0, 0, 65557, 0, 0, 196607, 0, 0, 131093, 0, 0, 262143, 0, 0, 196629, 0, 0, 327679, 0, 0, 262165, 0, 0, 393215, 0, 0, 327701, 0, 0, 458751, 0, 0, 393220, 13, 0, 393221, 14, 0, 393228, 10, 0, 393237, 0, 0, 524287, 0, 0, 458755, 13, 0, 458756, 22, 0, 458757, 23, 0, 458758, 14, 0, 458761, 10, 0, 458773, 0, 0, 589823, 0, 0, 524288, 3, 0, 524289, 3, 0, 524290, 3, 0, 524291, 22, 0, 524292, 0, 0, 524293, 0, 0, 524294, 23, 0, 524295, 3, 0, 524296, 3, 0, 524297, 4, 0, 524300, 2, 0, 524301, 3, 0, 524302, 3, 0, 524303, 3, 0, 524304, 3, 0, 524305, 3, 0, 524306, 3, 0, 524307, 3, 0, 524308, 25, 0, 524309, 0, 0, 655359, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 0, 0, 589843, 0, 0, 589844, 0, 0, 589845, 0, 0 )
 
-[node name="Player" parent="CanvasLayer" instance=ExtResource( 3 )]
+[node name="Player" parent="CanvasLayer" instance=ExtResource( 5 )]
 position = Vector2( 155, 286 )
 
 [node name="PlayerCamera" type="Camera2D" parent="CanvasLayer/Player"]
 current = true
 limit_left = 0
 limit_top = 0
-limit_right = 1400
-limit_bottom = 600
+limit_right = 1408
+limit_bottom = 620
 drag_margin_v_enabled = true
 
 [node name="PauseMenu" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="PauseMenu" instance=ExtResource( 2 )]
 
-[node name="Collectable" parent="." instance=ExtResource( 4 )]
-position = Vector2( 540.546, 242.058 )
+[node name="Collectable" parent="." instance=ExtResource( 3 )]
+position = Vector2( 544, 270 )
 
-[node name="Collectable2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 719.882, 243.946 )
+[node name="Collectable2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 40, 272 )
 
-[node name="Collectable3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 24.2465, 234.507 )
+[node name="Collectable3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 736, 270 )
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 5 )]
-position = Vector2( 801, 310 )
+[node name="KinematicBody2D" parent="." instance=ExtResource( 4 )]
+position = Vector2( 800, 310 )
 
 [node name="OneTouchPlatform" parent="." instance=ExtResource( 6 )]
-position = Vector2( 999.948, 273.383 )
+position = Vector2( 1000, 310 )
 
-[node name="Checkpoint" parent="." instance=ExtResource( 7 )]
-position = Vector2( 507.315, 472.74 )
+[node name="Checkpoint1" parent="." instance=ExtResource( 7 )]
+position = Vector2( 496, 472 )
 
 [node name="Puddle" parent="." instance=ExtResource( 8 )]
-position = Vector2( 1061, 525 )
+position = Vector2( 1048, 520 )
 z_index = -1
