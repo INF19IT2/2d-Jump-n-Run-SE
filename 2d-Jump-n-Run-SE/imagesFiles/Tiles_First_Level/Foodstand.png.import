@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/broadwalk3.png-212ca15ea8583cc5da781d9e3cfa8d06.stex"
+path="res://.import/Foodstand.png-8e6f69b7f5c3a8f532f0726a19fa2998.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imagesFiles/broadwalk3.png"
-dest_files=[ "res://.import/broadwalk3.png-212ca15ea8583cc5da781d9e3cfa8d06.stex" ]
+source_file="res://imagesFiles/Tiles_First_Level/Foodstand.png"
+dest_files=[ "res://.import/Foodstand.png-8e6f69b7f5c3a8f532f0726a19fa2998.stex" ]
 
 [params]
 

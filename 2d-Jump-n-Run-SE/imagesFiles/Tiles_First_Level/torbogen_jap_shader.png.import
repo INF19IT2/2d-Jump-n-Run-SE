@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/broadwalk1.png-9fbb35f7077075f3e72398849a1c5aca.stex"
+path="res://.import/torbogen_jap_shader.png-230e4c0cb53a352c4761f106e057c036.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imagesFiles/broadwalk1.png"
-dest_files=[ "res://.import/broadwalk1.png-9fbb35f7077075f3e72398849a1c5aca.stex" ]
+source_file="res://imagesFiles/Tiles_First_Level/torbogen_jap_shader.png"
+dest_files=[ "res://.import/torbogen_jap_shader.png-230e4c0cb53a352c4761f106e057c036.stex" ]
 
 [params]
 

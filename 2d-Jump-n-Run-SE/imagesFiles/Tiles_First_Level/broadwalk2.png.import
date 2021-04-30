@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/broadwalk4.png-e2e000635d4600b89b92d6c7c80683e8.stex"
+path="res://.import/broadwalk2.png-f1086ee41a6b2be2d0274327c255f0fa.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imagesFiles/broadwalk4.png"
-dest_files=[ "res://.import/broadwalk4.png-e2e000635d4600b89b92d6c7c80683e8.stex" ]
+source_file="res://imagesFiles/Tiles_First_Level/broadwalk2.png"
+dest_files=[ "res://.import/broadwalk2.png-f1086ee41a6b2be2d0274327c255f0fa.stex" ]
 
 [params]
 
