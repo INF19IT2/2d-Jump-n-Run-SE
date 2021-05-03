@@ -1,6 +1,8 @@
 # 2d-Jump-n-Run
 Das Spiel wird mit Hilfe der [Godot-Engine](https://godotengine.org/) entwickelt.
-Der Code wird vollständig in englischer Sprache gehalten
+
+Der Code wird vollständig in englischer Sprache gehalten.
+
 ## Einrichtung
 Das Projekt lokal einbinden:
 
