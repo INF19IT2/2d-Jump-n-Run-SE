@@ -53,7 +53,7 @@ position = Vector2( 800, 310 )
 position = Vector2( 1000, 310 )
 
 [node name="Checkpoint1" parent="." instance=ExtResource( 7 )]
-position = Vector2( 496, 472 )
+position = Vector2( 498.121, 480.485 )
 
 [node name="Puddle" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1048, 520 )
