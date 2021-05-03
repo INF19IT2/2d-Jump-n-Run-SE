@@ -3,7 +3,6 @@ extends KinematicBody2D
 # Declare member variables here. Examples:
 var health : int = 100
 var count : int = 0
-var type : String = "enemy"
 export var speed : int = 200
 export var jumpForce : int = 500
 export var gravity : int = 800
@@ -11,7 +10,7 @@ var facingRight = true
 var activated = false
 
 #preload projectile object
-const PROJECTILE = preload("res://Scenes/Objects/Projectile.tscn")
+const PROJECTILE = preload("res://Scenes/Objects/Projectile_Enemies.tscn")
 
 #time between shots
 const PROJECTILE_COOLDOWN_TIME = 0.75
@@ -58,7 +57,7 @@ func _physics_process(delta):
 	#create projectile on scientist position
 	if projectileCooldown <= 0.0 and activated:
 		var projectile = PROJECTILE.instance()
-		projectile.start(position, facingRight, type)
+		projectile.start(position, facingRight)
 		get_parent().add_child(projectile)
 		projectileCooldown = PROJECTILE_COOLDOWN_TIME
 	
