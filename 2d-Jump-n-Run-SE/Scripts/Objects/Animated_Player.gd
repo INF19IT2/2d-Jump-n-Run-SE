@@ -36,6 +36,7 @@ func _ready():
 	var slider = get_node("Control")
 	slider.connect("player_sprite_slider_changed", self, "change_player_size")
 	slider.connect("camera_slider_changed", self, "change_camera")
+	slider.connect("speed_slider_changed", self, "change_speed")
 
 func set_checkpoint(var check):
 	pos = check
@@ -124,3 +125,6 @@ func change_player_size(value):
 
 func change_camera(value):
 	$Camera2D.zoom = Vector2(value, value)
+
+func change_speed(value):
+	speed = value

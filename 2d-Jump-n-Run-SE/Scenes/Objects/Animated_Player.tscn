@@ -12,7 +12,7 @@
 [ext_resource path="res://imagesFiles/Player_Model/dreh_Animation/drehAnimation01.png" type="Texture" id=10]
 [ext_resource path="res://imagesFiles/Player_Model/dreh_Animation/drehAnimation09.png" type="Texture" id=11]
 [ext_resource path="res://imagesFiles/Player_Model/dreh_Animation/drehAnimation04.png" type="Texture" id=12]
-[ext_resource path="res://Scripts/Objects/test.gd" type="Script" id=13]
+[ext_resource path="res://Scripts/Objects/Animated_Player.gd" type="Script" id=13]
 [ext_resource path="res://Scenes/Objects/HealthBar.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/Objects/slider.tscn" type="PackedScene" id=15]
 

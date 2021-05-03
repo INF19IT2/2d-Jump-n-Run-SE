@@ -22,7 +22,7 @@ margin_left = 502.0
 margin_top = 1.0
 margin_right = 542.0
 margin_bottom = 15.0
-text = "1"
+text = "Player size: 1"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -44,7 +44,7 @@ margin_left = 502.0
 margin_top = 1.0
 margin_right = 542.0
 margin_bottom = 15.0
-text = "1"
+text = "Dummy size: 1"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -66,10 +66,34 @@ margin_left = 502.0
 margin_top = 1.0
 margin_right = 542.0
 margin_bottom = 15.0
-text = "0.4"
+text = "Camera zoom: 0.4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Speed_Slider" type="HSlider" parent="."]
+margin_left = 5.0
+margin_top = 78.0
+margin_right = 505.0
+margin_bottom = 94.0
+min_value = 10.0
+max_value = 300.0
+step = 1.0
+value = 200.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Speed_Label" type="Label" parent="Speed_Slider"]
+margin_left = 502.0
+margin_top = 1.0
+margin_right = 616.0
+margin_bottom = 15.0
+text = "Player speed: 200"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="value_changed" from="Player_Sprite_Slider" to="." method="_on_Player_Sprite_Slider_value_changed"]
 [connection signal="value_changed" from="Dummy_Slider" to="." method="_on_Dummy_Slider_value_changed"]
 [connection signal="value_changed" from="Camera_Slider" to="." method="_on_Camera_Slider_value_changed"]
+[connection signal="value_changed" from="Speed_Slider" to="." method="_on_Speed_Slider_value_changed"]
