@@ -1,20 +1,51 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://imagesFiles/Main_Scene/High-Score_Button.png" type="Texture" id=1]
 [ext_resource path="res://imagesFiles/Main_Scene/grey_background.png" type="Texture" id=2]
 [ext_resource path="res://imagesFiles/Main_Scene/Exit_Button.png" type="Texture" id=3]
-[ext_resource path="res://imagesFiles/Main_Scene/Options_Button.png" type="Texture" id=4]
+[ext_resource path="res://imagesFiles/Main_Scene/2699.png" type="Texture" id=4]
 [ext_resource path="res://imagesFiles/Main_Scene/StartLevel_Button.png" type="Texture" id=5]
 [ext_resource path="res://Scripts/MainScene/MainScene.gd" type="Script" id=6]
 [ext_resource path="res://Scenes/Options/OptionsMenu.tscn" type="PackedScene" id=7]
+[ext_resource path="res://fonts/ComicNeue-Regular.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://fonts/ComicNeue-Italic.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://fonts/ComicNeue-BoldItalic.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://fonts/ComicNeue-Bold.ttf" type="DynamicFontData" id=11]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 8 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+RichTextLabel/icons/TextLabels = null
+
+[sub_resource type="StyleBoxFlat" id=3]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color( 0.988235, 0.972549, 0, 1 )
+expand_margin_left = 10.0
+
+[sub_resource type="DynamicFont" id=4]
+size = 25
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=7]
+font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+content_margin_right = 10.0
+bg_color = Color( 1, 0, 0, 1 )
 
 [node name="MainScene" type="TextureRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -1.26001
-margin_top = -4.0
-margin_right = -0.26001
-margin_bottom = -4.0
+theme = SubResource( 2 )
 texture = ExtResource( 2 )
 expand = true
 script = ExtResource( 6 )
@@ -23,56 +54,55 @@ __meta__ = {
 }
 
 [node name="ExitButton" type="TextureButton" parent="."]
-anchor_left = 0.33
-anchor_top = 0.288
-anchor_right = 0.507
-anchor_bottom = 0.438
-margin_left = -0.132996
-margin_top = 0.22699
-margin_right = 0.441956
-margin_bottom = 0.22699
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -91.0
+margin_top = 88.0
+margin_right = 91.0
+margin_bottom = 178.0
 texture_normal = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HighScoreButton" type="TextureButton" parent="."]
-anchor_left = 0.523
-anchor_top = 0.542
-anchor_right = 0.701
-anchor_bottom = 0.692
-margin_left = 0.46698
-margin_top = 0.216949
-margin_right = 0.0169678
-margin_bottom = 0.21698
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -91.0
+margin_top = -2.0
+margin_right = 91.0
+margin_bottom = 88.0
 texture_normal = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="OptionsButton" type="TextureButton" parent="."]
-anchor_left = 0.519
-anchor_top = 0.283
-anchor_right = 0.696
-anchor_bottom = 0.433
-margin_left = -0.196045
-margin_top = 0.0519867
-margin_right = 0.378967
-margin_bottom = 0.0519714
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 65.26
+margin_top = 52.0
+margin_right = -447.74
+margin_bottom = -36.0
+rect_scale = Vector2( 0.2, 0.2 )
 texture_normal = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="StartLevelButton" type="TextureButton" parent="."]
-anchor_left = 0.333
-anchor_top = 0.544
-anchor_right = 0.511
-anchor_bottom = 0.694
-margin_left = 0.112976
-margin_top = -0.0810242
-margin_right = -0.337036
-margin_bottom = -0.0809937
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -91.0
+margin_top = -92.0
+margin_right = 91.0
+margin_bottom = -1.99994
 texture_normal = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -83,6 +113,91 @@ margin_left = 1.37811
 margin_top = 3.53987
 margin_right = 1.37817
 margin_bottom = 3.53986
+
+[node name="LineEdit" type="LineEdit" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -132.0
+margin_top = -229.0
+margin_right = 132.0
+margin_bottom = -173.0
+align = 1
+placeholder_text = "Spielername"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InfectLabel" type="Polygon2D" parent="."]
+position = Vector2( 1022.62, 478 )
+color = Color( 0.988235, 0.972549, 0, 1 )
+polygon = PoolVector2Array( 0, 2, -288, 2, -256, -30, 0, -30, 0, -14 )
+
+[node name="INFECTLabel" type="RichTextLabel" parent="InfectLabel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -255.0
+margin_top = -30.0
+custom_styles/normal = SubResource( 3 )
+custom_fonts/bold_italics_font = SubResource( 4 )
+custom_fonts/italics_font = SubResource( 5 )
+custom_fonts/bold_font = SubResource( 6 )
+custom_fonts/normal_font = SubResource( 7 )
+custom_colors/default_color = Color( 0.294118, 0.286275, 0.286275, 1 )
+bbcode_enabled = true
+bbcode_text = "[right][b][i]INFECT THEM ALL![/i][/b][right]"
+text = "INFECT THEM ALL!"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Live" type="Polygon2D" parent="."]
+position = Vector2( 1022, 448 )
+color = Color( 1, 0, 0, 1 )
+polygon = PoolVector2Array( 1, 0, 1, -32, -87, -32, -119, 0 )
+
+[node name="LiveLabel" type="RichTextLabel" parent="Live"]
+margin_left = -87.0
+margin_top = -32.0
+margin_right = 1.0
+custom_styles/normal = SubResource( 8 )
+custom_fonts/bold_italics_font = SubResource( 4 )
+custom_fonts/italics_font = SubResource( 5 )
+custom_fonts/bold_font = SubResource( 6 )
+custom_fonts/normal_font = SubResource( 7 )
+custom_colors/default_color = Color( 0.294118, 0.286275, 0.286275, 1 )
+bbcode_enabled = true
+bbcode_text = "[right][b][i]LIVE[/i][/b][/right]"
+text = "LIVE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Game" type="Polygon2D" parent="."]
+position = Vector2( 0, 192 )
+color = Color( 0.988235, 0.972549, 0, 1 )
+polygon = PoolVector2Array( 0, 0, 192, 0, 224, 32, 0, 32 )
+
+[node name="GAMELabel" type="RichTextLabel" parent="Game"]
+margin_right = 192.0
+margin_bottom = 32.0
+custom_styles/normal = SubResource( 3 )
+custom_fonts/bold_italics_font = SubResource( 4 )
+custom_fonts/italics_font = SubResource( 5 )
+custom_fonts/bold_font = SubResource( 6 )
+custom_fonts/normal_font = SubResource( 7 )
+custom_colors/default_color = Color( 0.294118, 0.286275, 0.286275, 1 )
+bbcode_enabled = true
+bbcode_text = "[b][i]CORONA GAME[/i][/b]"
+text = "CORONA GAME"
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="ExitButton" to="." method="_on_ExitButton_pressed"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_OptionsButton_pressed"]
 [connection signal="pressed" from="StartLevelButton" to="." method="_on_StartLevelButton_pressed"]

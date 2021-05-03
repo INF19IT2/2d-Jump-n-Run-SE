@@ -1,0 +1,57 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://imagesFiles/Player_Model/dreh_Animation/drehAnimation03.png" type="Texture" id=1]
+[ext_resource path="res://imagesFiles/Player_Model/dreh_Animation/drehAnimation06.png" type="Texture" id=2]
+[ext_resource path="res://imagesFiles/Player_Model/dreh_Animation/drehAnimation07.png" type="Texture" id=3]
+[ext_resource path="res://imagesFiles/Player_Model/dreh_Animation/drehAnimation08.png" type="Texture" id=4]
+[ext_resource path="res://imagesFiles/Player_Model/dreh_Animation/drehAnimation10.png" type="Texture" id=5]
+[ext_resource path="res://imagesFiles/Player_Model/dreh_Animation/drehAnimation11.png" type="Texture" id=6]
+[ext_resource path="res://imagesFiles/Player_Model/dreh_Animation/drehAnimation02.png" type="Texture" id=7]
+[ext_resource path="res://imagesFiles/Player_Model/dreh_Animation/drehAnimation05.png" type="Texture" id=8]
+[ext_resource path="res://imagesFiles/Player_Model/dreh_Animation/drehAnimation12.png" type="Texture" id=9]
+[ext_resource path="res://imagesFiles/Player_Model/dreh_Animation/drehAnimation01.png" type="Texture" id=10]
+[ext_resource path="res://imagesFiles/Player_Model/dreh_Animation/drehAnimation09.png" type="Texture" id=11]
+[ext_resource path="res://imagesFiles/Player_Model/dreh_Animation/drehAnimation04.png" type="Texture" id=12]
+[ext_resource path="res://Scripts/Objects/Animated_Player.gd" type="Script" id=13]
+[ext_resource path="res://Scenes/Objects/HealthBar.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Objects/slider.tscn" type="PackedScene" id=15]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 10 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 12 ), ExtResource( 8 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 11 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "walk",
+"speed": 2.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 16.2735
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+script = ExtResource( 13 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.4, 0.4 )
+smoothing_enabled = true
+smoothing_speed = 2.0
+
+[node name="HealthBar" parent="." instance=ExtResource( 14 )]
+
+[node name="Label" type="Label" parent="."]
+margin_left = -26.0294
+margin_top = -33.0373
+margin_right = 13.9706
+margin_bottom = -19.0373
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" parent="." instance=ExtResource( 15 )]

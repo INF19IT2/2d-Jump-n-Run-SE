@@ -17,12 +17,11 @@ func move(delta):
 	position += velocity * delta
 
 func _on_Projectile_body_entered(body):
-	if body.get_name() != "Player":
-		dissolveProjectile()
-		if body.has_method('take_damage'):
-			body.take_damage(damage)
-		if body.has_method('get_infected'):
-			body.get_infected()
+	dissolveProjectile()
+	if body.has_method('take_damage'):
+		body.take_damage(damage)
+	if body.has_method('get_infected'):
+		body.get_infected()
 
 func _on_Lifetime_timeout():
 	dissolveProjectile()
