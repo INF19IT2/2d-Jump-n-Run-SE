@@ -10,6 +10,7 @@ extents = Vector2( 32, 16 )
 extents = Vector2( 32, 16 )
 
 [node name="OneTouchPlatform" type="StaticBody2D"]
+collision_mask = 2
 
 [node name="placeholder" type="Sprite" parent="."]
 scale = Vector2( 0.053, 0.036 )
