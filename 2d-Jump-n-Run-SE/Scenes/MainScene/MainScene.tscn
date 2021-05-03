@@ -25,17 +25,17 @@ content_margin_right = 10.0
 bg_color = Color( 0.988235, 0.972549, 0, 1 )
 expand_margin_left = 10.0
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=4]
 size = 25
 font_data = ExtResource( 10 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=5]
 font_data = ExtResource( 9 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=6]
 font_data = ExtResource( 11 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=7]
 font_data = ExtResource( 8 )
 
 [sub_resource type="StyleBoxFlat" id=8]
@@ -140,10 +140,10 @@ anchor_bottom = 1.0
 margin_left = -255.0
 margin_top = -30.0
 custom_styles/normal = SubResource( 3 )
-custom_fonts/bold_italics_font = SubResource( 6 )
-custom_fonts/italics_font = SubResource( 7 )
-custom_fonts/bold_font = SubResource( 4 )
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/bold_italics_font = SubResource( 4 )
+custom_fonts/italics_font = SubResource( 5 )
+custom_fonts/bold_font = SubResource( 6 )
+custom_fonts/normal_font = SubResource( 7 )
 custom_colors/default_color = Color( 0.294118, 0.286275, 0.286275, 1 )
 bbcode_enabled = true
 bbcode_text = "[right][b][i]INFECT THEM ALL![/i][/b][right]"
@@ -165,10 +165,10 @@ margin_left = -87.0
 margin_top = -32.0
 margin_right = 1.0
 custom_styles/normal = SubResource( 8 )
-custom_fonts/bold_italics_font = SubResource( 6 )
-custom_fonts/italics_font = SubResource( 7 )
-custom_fonts/bold_font = SubResource( 4 )
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/bold_italics_font = SubResource( 4 )
+custom_fonts/italics_font = SubResource( 5 )
+custom_fonts/bold_font = SubResource( 6 )
+custom_fonts/normal_font = SubResource( 7 )
 custom_colors/default_color = Color( 0.294118, 0.286275, 0.286275, 1 )
 bbcode_enabled = true
 bbcode_text = "[right][b][i]LIVE[/i][/b][/right]"
@@ -186,10 +186,10 @@ polygon = PoolVector2Array( 0, 0, 192, 0, 224, 32, 0, 32 )
 margin_right = 192.0
 margin_bottom = 32.0
 custom_styles/normal = SubResource( 3 )
-custom_fonts/bold_italics_font = SubResource( 6 )
-custom_fonts/italics_font = SubResource( 7 )
-custom_fonts/bold_font = SubResource( 4 )
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/bold_italics_font = SubResource( 4 )
+custom_fonts/italics_font = SubResource( 5 )
+custom_fonts/bold_font = SubResource( 6 )
+custom_fonts/normal_font = SubResource( 7 )
 custom_colors/default_color = Color( 0.294118, 0.286275, 0.286275, 1 )
 bbcode_enabled = true
 bbcode_text = "[b][i]CORONA GAME[/i][/b]"
@@ -198,7 +198,6 @@ fit_content_height = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
 [connection signal="pressed" from="ExitButton" to="." method="_on_ExitButton_pressed"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_OptionsButton_pressed"]
 [connection signal="pressed" from="StartLevelButton" to="." method="_on_StartLevelButton_pressed"]
