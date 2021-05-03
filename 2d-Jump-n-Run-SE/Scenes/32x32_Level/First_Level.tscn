@@ -2,9 +2,9 @@
 
 [ext_resource path="res://Scenes/32x32_Level/32_32_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/PauseMenu/PaueMenu.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Objects/test.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Objects/Animated_Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Objects/Dummy.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/32x32_Level/32x32_level_script.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/32x32_level_script.gd" type="Script" id=5]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 5 )
