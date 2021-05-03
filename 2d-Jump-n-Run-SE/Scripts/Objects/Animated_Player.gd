@@ -37,6 +37,7 @@ func _ready():
 	slider.connect("player_sprite_slider_changed", self, "change_player_size")
 	slider.connect("camera_slider_changed", self, "change_camera")
 	slider.connect("speed_slider_changed", self, "change_speed")
+	slider.connect("jump_slider_changed", self, "change_jump")
 
 func set_checkpoint(var check):
 	pos = check
@@ -128,3 +129,6 @@ func change_camera(value):
 
 func change_speed(value):
 	speed = value
+
+func change_jump(value):
+	jumpForce = value
