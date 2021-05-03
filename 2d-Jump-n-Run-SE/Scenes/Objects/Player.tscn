@@ -18,7 +18,6 @@ position = Vector2( -2, 0 )
 script = ExtResource( 2 )
 
 [node name="Virus" type="Sprite" parent="."]
-visible = false
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 1 )
 
@@ -34,7 +33,6 @@ scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource( 1 )
 
 [node name="ducking_CollisionShape2D" type="CollisionShape2D" parent="."]

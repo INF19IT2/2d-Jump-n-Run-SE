@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Scenes/Levels/Second_Level/first_level_tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://Scenes/Levels/First_Level/first_level_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/PauseMenu/PaueMenu.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Objects/Collectable.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Objects/Dummy.tscn" type="PackedScene" id=4]
