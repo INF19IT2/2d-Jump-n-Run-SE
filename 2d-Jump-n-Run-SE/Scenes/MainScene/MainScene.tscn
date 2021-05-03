@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://imagesFiles/Main_Scene/High-Score_Button.png" type="Texture" id=1]
 [ext_resource path="res://imagesFiles/Main_Scene/grey_background.png" type="Texture" id=2]
@@ -7,14 +7,41 @@
 [ext_resource path="res://imagesFiles/Main_Scene/StartLevel_Button.png" type="Texture" id=5]
 [ext_resource path="res://Scripts/MainScene/MainScene.gd" type="Script" id=6]
 [ext_resource path="res://Scenes/Options/OptionsMenu.tscn" type="PackedScene" id=7]
+[ext_resource path="res://fonts/ComicNeue-Regular.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://fonts/ComicNeue-Italic.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://fonts/ComicNeue-BoldItalic.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://fonts/ComicNeue-Bold.ttf" type="DynamicFontData" id=11]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 8 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+RichTextLabel/icons/TextLabels = null
+
+[sub_resource type="StyleBoxFlat" id=3]
+content_margin_left = 10.0
+bg_color = Color( 0.701961, 0.823529, 0, 1 )
+expand_margin_left = 10.0
+
+[sub_resource type="DynamicFont" id=6]
+size = 30
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=7]
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 8 )
 
 [node name="MainScene" type="TextureRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -1.26001
-margin_top = -4.0
-margin_right = -0.26001
-margin_bottom = -4.0
+margin_right = 1.0
+theme = SubResource( 2 )
 texture = ExtResource( 2 )
 expand = true
 script = ExtResource( 6 )
@@ -27,10 +54,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -90.5
-margin_top = 112.0
-margin_right = 91.5
-margin_bottom = 202.0
+margin_left = -91.0
+margin_top = 88.0
+margin_right = 91.0
+margin_bottom = 178.0
 texture_normal = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -41,10 +68,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -94.7379
-margin_top = 8.54092
-margin_right = 87.2621
-margin_bottom = 98.5409
+margin_left = -91.0
+margin_top = -2.0
+margin_right = 91.0
+margin_bottom = 88.0
 texture_normal = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -53,10 +80,10 @@ __meta__ = {
 [node name="OptionsButton" type="TextureButton" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 79.0
-margin_top = 42.0
-margin_right = -434.0
-margin_bottom = -46.0
+margin_left = 65.26
+margin_top = 52.0
+margin_right = -447.74
+margin_bottom = -36.0
 rect_scale = Vector2( 0.2, 0.2 )
 texture_normal = ExtResource( 4 )
 __meta__ = {
@@ -68,10 +95,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -96.8568
-margin_top = -94.5186
-margin_right = 85.1432
-margin_bottom = -4.51855
+margin_left = -91.0
+margin_top = -92.0
+margin_right = 91.0
+margin_bottom = -1.99997
 texture_normal = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -88,12 +115,29 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -97.8195
-margin_top = -180.829
-margin_right = 80.1805
-margin_bottom = -156.829
+margin_left = -132.0
+margin_top = -228.0
+margin_right = 132.0
+margin_bottom = -172.0
 align = 1
 placeholder_text = "Spielername"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_top = 196.0
+margin_right = 257.0
+margin_bottom = 236.0
+custom_styles/normal = SubResource( 3 )
+custom_fonts/bold_italics_font = SubResource( 6 )
+custom_fonts/italics_font = SubResource( 7 )
+custom_fonts/bold_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 5 )
+custom_colors/default_color = Color( 0.294118, 0.286275, 0.286275, 1 )
+bbcode_enabled = true
+bbcode_text = "[b][i]CORONA GAME[/i][/b]"
+text = "CORONA GAME"
 __meta__ = {
 "_edit_use_anchors_": false
 }
