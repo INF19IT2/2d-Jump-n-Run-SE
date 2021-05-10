@@ -129,14 +129,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="InfectLabel" type="Polygon2D" parent="."]
-position = Vector2( 1022.62, 478 )
+[node name="LabelsContainer" type="AspectRatioContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 0.996
+anchor_right = 1.0
+anchor_bottom = 0.996
+margin_top = 2.40002
+margin_bottom = 2.40002
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InfectLabel" type="Polygon2D" parent="LabelsContainer"]
+position = Vector2( -1.38, -122 )
 color = Color( 0.988235, 0.972549, 0, 1 )
 polygon = PoolVector2Array( 0, 2, -288, 2, -256, -30, 0, -30, 0, -14 )
 
-[node name="INFECTLabel" type="RichTextLabel" parent="InfectLabel"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="INFECTLabel" type="RichTextLabel" parent="LabelsContainer/InfectLabel"]
 margin_left = -255.0
 margin_top = -30.0
 custom_styles/normal = SubResource( 3 )
@@ -153,14 +162,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Node" type="Node" parent="."]
-
-[node name="Live" type="Polygon2D" parent="."]
-position = Vector2( 1022, 448 )
+[node name="Live" type="Polygon2D" parent="LabelsContainer"]
+position = Vector2( -2, -152 )
 color = Color( 1, 0, 0, 1 )
 polygon = PoolVector2Array( 1, 0, 1, -32, -87, -32, -119, 0 )
 
-[node name="LiveLabel" type="RichTextLabel" parent="Live"]
+[node name="LiveLabel" type="RichTextLabel" parent="LabelsContainer/Live"]
 margin_left = -87.0
 margin_top = -32.0
 margin_right = 1.0
@@ -198,6 +205,7 @@ fit_content_height = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="pressed" from="ExitButton" to="." method="_on_ExitButton_pressed"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_OptionsButton_pressed"]
 [connection signal="pressed" from="StartLevelButton" to="." method="_on_StartLevelButton_pressed"]
