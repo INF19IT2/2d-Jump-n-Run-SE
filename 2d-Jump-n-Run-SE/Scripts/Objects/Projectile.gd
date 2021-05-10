@@ -2,7 +2,7 @@ extends Area2D
 
 var velocity = Vector2()
 export var speed = 400
-export var damage = 5
+export var damage = 1
 export var lifetime = 1
 
 func start(_position, _facingRight):
