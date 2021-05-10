@@ -25,6 +25,9 @@ anchor_top = -0.013
 anchor_right = 1.0
 margin_top = 7.8
 margin_bottom = 184.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ResolutionOptions" type="OptionButton" parent="OptionsBackground/GraphicOptions"]
 anchor_left = 0.797

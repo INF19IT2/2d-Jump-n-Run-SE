@@ -23,8 +23,8 @@ const PROJECTILE_COOLDOWN_TIME = 0.25
 var projectileCooldown = 0.0
 
 # Player stats
-var health : int = 100
-var health_max : int = 100
+var health : int = 10
+var health_max : int = 10
 
 signal player_dead
 signal player_stats_changed
@@ -151,3 +151,5 @@ func add_collectable():
 	coins += 1
 	var lab = get_node("Label")
 	lab.set_text(str(coins))
+	var lab2 = get_node("Label2")
+	lab2.set_text(str(coins))

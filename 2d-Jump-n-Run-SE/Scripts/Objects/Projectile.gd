@@ -2,7 +2,7 @@ extends Area2D
 
 var velocity = Vector2()
 export var speed = 400
-export var damage = 5
+export var damage = 1
 export var lifetime = 1
 
 func start(_position, _facingRight):
@@ -17,10 +17,11 @@ func move(delta):
 	position += velocity * delta
 
 func _on_Projectile_body_entered(body):
-	if body.get_name() != "Player":
-		dissolveProjectile()
-		if body.has_method('take_damage'):
-			body.take_damage(damage)
+	dissolveProjectile()
+	if body.has_method('take_damage'):
+		body.take_damage(damage)
+	if body.has_method('get_infected'):
+		body.get_infected()
 
 func _on_Lifetime_timeout():
 	dissolveProjectile()

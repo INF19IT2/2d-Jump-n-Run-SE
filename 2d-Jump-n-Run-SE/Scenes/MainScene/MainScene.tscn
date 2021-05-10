@@ -19,7 +19,7 @@ font_data = ExtResource( 8 )
 default_font = SubResource( 1 )
 RichTextLabel/icons/TextLabels = null
 
-[sub_resource type="StyleBoxFlat" id=8]
+[sub_resource type="StyleBoxFlat" id=3]
 content_margin_left = 10.0
 content_margin_right = 10.0
 bg_color = Color( 0.988235, 0.972549, 0, 1 )
@@ -38,7 +38,7 @@ font_data = ExtResource( 11 )
 [sub_resource type="DynamicFont" id=7]
 font_data = ExtResource( 8 )
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=8]
 content_margin_right = 10.0
 bg_color = Color( 1, 0, 0, 1 )
 
@@ -148,7 +148,7 @@ polygon = PoolVector2Array( 0, 2, -288, 2, -256, -30, 0, -30, 0, -14 )
 [node name="INFECTLabel" type="RichTextLabel" parent="LabelsContainer/InfectLabel"]
 margin_left = -255.0
 margin_top = -30.0
-custom_styles/normal = SubResource( 8 )
+custom_styles/normal = SubResource( 3 )
 custom_fonts/bold_italics_font = SubResource( 4 )
 custom_fonts/italics_font = SubResource( 5 )
 custom_fonts/bold_font = SubResource( 6 )
@@ -171,7 +171,7 @@ polygon = PoolVector2Array( 1, 0, 1, -32, -87, -32, -119, 0 )
 margin_left = -87.0
 margin_top = -32.0
 margin_right = 1.0
-custom_styles/normal = SubResource( 3 )
+custom_styles/normal = SubResource( 8 )
 custom_fonts/bold_italics_font = SubResource( 4 )
 custom_fonts/italics_font = SubResource( 5 )
 custom_fonts/bold_font = SubResource( 6 )
@@ -192,7 +192,7 @@ polygon = PoolVector2Array( 0, 0, 192, 0, 224, 32, 0, 32 )
 [node name="GAMELabel" type="RichTextLabel" parent="Game"]
 margin_right = 192.0
 margin_bottom = 32.0
-custom_styles/normal = SubResource( 8 )
+custom_styles/normal = SubResource( 3 )
 custom_fonts/bold_italics_font = SubResource( 4 )
 custom_fonts/italics_font = SubResource( 5 )
 custom_fonts/bold_font = SubResource( 6 )

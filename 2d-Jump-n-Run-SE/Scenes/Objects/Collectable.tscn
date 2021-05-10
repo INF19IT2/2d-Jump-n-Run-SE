@@ -7,6 +7,8 @@
 extents = Vector2( 18.8621, 22.7297 )
 
 [node name="Collectable" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

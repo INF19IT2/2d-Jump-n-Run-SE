@@ -1,5 +1,8 @@
 # 2d-Jump-n-Run
 Das Spiel wird mit Hilfe der [Godot-Engine](https://godotengine.org/) entwickelt.
+
+Der Code wird vollständig in englischer Sprache gehalten.
+
 ## Einrichtung
 Das Projekt lokal einbinden:
 
@@ -38,6 +41,12 @@ Als Hauptordner für den Code dient der Ordner 2d-Jump-n-Run-SE, dabei gibt es f
 * **imagesFiles** enthält alle Bilddateien
   * Hier ebenfalls Unterordner zum zugehörigen Modell/Level erstellen
 
+## Exportieren des Projekts
+Unter dem Reiter Projekt gibt es den Punkt exportieren. Wenn dieser angeclickt wird muss zuerst eine Vorlage gewählt werden, wofür man das Projekt exportieren möchte.
+Wenn man das zum ersten mal macht wird man ein Template herunterladen müssen. Dieses Template wird von Godot direkt angezeigt und kann direkt in der Anwendung heruntergeladen werden, wenn das nicht funktioniert findet man die Templates auch auf der Godot Website. Im Anschluss kann man das Projekt exportieren. Hierbei sollten eine exe und eine pck Datei entstehen. Damit hat man nun ein funktionierendes Export.
+
+Hier ein kleines Video tutorial zum Export in Godot:
+https://youtu.be/cXahUh9Zfho?t=40
 
 ## Google-Drive Link zu allen relevanten Dokumenten
 https://drive.google.com/drive/folders/1fcZYi8vxpXD6oUy3UmAal-U4MVxDlJ2M?usp=sharing
