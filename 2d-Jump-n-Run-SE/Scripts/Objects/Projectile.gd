@@ -6,15 +6,14 @@ export var damage = 5
 export var lifetime = 2
 
 func start(_position, _facingRight):
-	#set parameters if slider is present
-	var parent = get_parent()
-	if parent != null:
-		var speed_slider = parent.get_node("KinematicBody2D2").get_node("Control").get_node("Projectile_Speed_Slider")
-		speed = speed_slider.value
-	
 	$Lifetime.wait_time = lifetime
 	position = _position
 	velocity.x = speed if _facingRight else -speed
+
+func set_slider_speed():
+	var speed_slider = get_parent().get_node("KinematicBody2D2").get_node("Control").get_node("Projectile_Speed_Slider")
+	speed = speed_slider.value
+	velocity.x = speed if velocity.x>0 else -speed
 
 func _process(delta):
 	move(delta)
