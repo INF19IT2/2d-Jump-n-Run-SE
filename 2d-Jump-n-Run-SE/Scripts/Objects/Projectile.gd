@@ -1,9 +1,9 @@
 extends Area2D
 
 var velocity = Vector2()
-export var speed = 32
+export var speed = 64
 export var damage = 5
-export var lifetime = 2
+export var lifetime = 4
 
 func start(_position, _facingRight):
 	$Lifetime.wait_time = lifetime
