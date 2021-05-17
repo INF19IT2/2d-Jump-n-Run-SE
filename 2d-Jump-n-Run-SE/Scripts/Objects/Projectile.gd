@@ -21,7 +21,11 @@ func set_slider_values():
 	lifetime = lifetime_slider.value
 	var lifetimeTimer : Timer = get_node("Lifetime")
 	lifetimeTimer.start(lifetime)
-
+	
+	#size slider
+	var size_slider = get_parent().get_node("KinematicBody2D2").get_node("Control").get_node("Projectile_Size_Slider")
+	var scaling_value = size_slider.value
+	scale = Vector2(scaling_value,scaling_value)
 
 func _process(delta):
 	move(delta)

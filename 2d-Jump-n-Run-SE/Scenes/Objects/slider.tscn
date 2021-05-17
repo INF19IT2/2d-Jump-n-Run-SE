@@ -159,6 +159,29 @@ text = "Projectile lifetime: 2"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Projectile_Size_Slider" type="HSlider" parent="."]
+margin_left = 5.0
+margin_top = 160.0
+margin_right = 505.0
+margin_bottom = 180.0
+min_value = 0.01
+max_value = 1.0
+step = 0.01
+value = 0.1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Projectile_Size_Label" type="Label" parent="Projectile_Size_Slider"]
+margin_left = 502.0
+margin_top = 1.0
+margin_right = 609.0
+margin_bottom = 15.0
+text = "Projectile size: 0.1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="value_changed" from="Player_Sprite_Slider" to="." method="_on_Player_Sprite_Slider_value_changed"]
 [connection signal="value_changed" from="Dummy_Slider" to="." method="_on_Dummy_Slider_value_changed"]
 [connection signal="value_changed" from="Camera_Slider" to="." method="_on_Camera_Slider_value_changed"]
@@ -166,3 +189,4 @@ __meta__ = {
 [connection signal="value_changed" from="Jump_Slider" to="." method="_on_Jump_Slider_value_changed"]
 [connection signal="value_changed" from="Projectile_Speed_Slider" to="." method="_on_Projectile_Speed_Slider_value_changed"]
 [connection signal="value_changed" from="Projectile_Lifetime_Slider" to="." method="_on_Projectile_Lifetime_Slider_value_changed"]
+[connection signal="value_changed" from="Projectile_Size_Slider" to="." method="_on_Projectile_Size_Slider_value_changed"]
