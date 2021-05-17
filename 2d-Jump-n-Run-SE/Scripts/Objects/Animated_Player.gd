@@ -95,8 +95,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("shoot") and is_ducked == false:
 		if projectileCooldown <= 0.0:
 			var projectile = PROJECTILE.instance()
-			projectile.start(position, facingRight)
 			get_parent().add_child(projectile)
+			projectile.start(position, facingRight)
 			projectileCooldown = PROJECTILE_COOLDOWN_TIME
 	projectileCooldown -= delta
 

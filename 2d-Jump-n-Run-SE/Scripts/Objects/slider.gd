@@ -5,6 +5,7 @@ onready var dummy_label = $Dummy_Slider/Dummy_Label
 onready var camera_label = $Camera_Slider/Camera_Label
 onready var speed_label = $Speed_Slider/Speed_Label
 onready var jump_label = $Jump_Slider/Jump_Label
+onready var projectile_speed_label = $Projectile_Speed_Slider/Projectile_Speed_Label
 
 signal player_sprite_slider_changed
 signal dummy_slider_changed
@@ -41,3 +42,7 @@ func _on_Speed_Slider_value_changed(value):
 func _on_Jump_Slider_value_changed(value):
 	jump_label.set_text("Player jump: " + str(value))
 	emit_signal("jump_slider_changed", value)
+
+
+func _on_Projectile_Speed_Slider_value_changed(value):
+	projectile_speed_label.set_text("Projectile Speed: " + str(value))
