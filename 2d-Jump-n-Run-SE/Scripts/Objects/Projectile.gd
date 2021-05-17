@@ -1,14 +1,31 @@
 extends Area2D
 
 var velocity = Vector2()
-export var speed = 400
+export var speed = 64
 export var damage = 5
-export var lifetime = 1
+export var lifetime = 4
 
 func start(_position, _facingRight):
 	$Lifetime.wait_time = lifetime
 	position = _position
 	velocity.x = speed if _facingRight else -speed
+
+func set_slider_values():
+	#speed slider
+	var speed_slider = get_parent().get_node("KinematicBody2D2").get_node("Control").get_node("Projectile_Speed_Slider")
+	speed = speed_slider.value
+	velocity.x = speed if velocity.x>0 else -speed
+	
+	#lifetime slider
+	var lifetime_slider = get_parent().get_node("KinematicBody2D2").get_node("Control").get_node("Projectile_Lifetime_Slider")
+	lifetime = lifetime_slider.value
+	var lifetimeTimer : Timer = get_node("Lifetime")
+	lifetimeTimer.start(lifetime)
+	
+	#size slider
+	var size_slider = get_parent().get_node("KinematicBody2D2").get_node("Control").get_node("Projectile_Size_Slider")
+	var scaling_value = size_slider.value
+	scale = Vector2(scaling_value,scaling_value)
 
 func _process(delta):
 	move(delta)
@@ -23,8 +40,16 @@ func _on_Projectile_body_entered(body):
 	if body.has_method('get_infected'):
 		body.get_infected()
 
+func _on_Projectile_area_entered(area):
+	dissolveProjectile()
+	if area.has_method('dissolveProjectile'):
+		area.dissolveProjectile()
+	
 func _on_Lifetime_timeout():
 	dissolveProjectile()
 
 func dissolveProjectile():
 	queue_free()
+
+
+
