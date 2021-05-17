@@ -32,7 +32,11 @@ var pos = Vector2(155, 186)
 #gets called when the node and its children have entered the scene tree
 func _ready():
 	emit_signal("player_stats_changed", self)
-
+	var slider = get_node("Control")
+	slider.connect("player_sprite_slider_changed", self, "change_player_size")
+	slider.connect("camera_slider_changed", self, "change_camera")
+	slider.connect("speed_slider_changed", self, "change_speed")
+	slider.connect("jump_slider_changed", self, "change_jump")
 
 func set_checkpoint(var check):
 	pos = check
@@ -122,3 +126,15 @@ func add_collectable():
 	var lab = get_node("Label")
 	lab.set_text(str(coins))
 
+func change_player_size(value):
+	$AnimatedSprite.scale = Vector2(value, value)
+	$CollisionShape2D.scale = Vector2(value, value)
+
+func change_camera(value):
+	$Camera2D.zoom = Vector2(value, value)
+
+func change_speed(value):
+	speed = value
+
+func change_jump(value):
+	jumpForce = value
