@@ -10,10 +10,18 @@ func start(_position, _facingRight):
 	position = _position
 	velocity.x = speed if _facingRight else -speed
 
-func set_slider_speed():
+func set_slider_values():
+	#speed slider
 	var speed_slider = get_parent().get_node("KinematicBody2D2").get_node("Control").get_node("Projectile_Speed_Slider")
 	speed = speed_slider.value
 	velocity.x = speed if velocity.x>0 else -speed
+	
+	#lifetime slider
+	var lifetime_slider = get_parent().get_node("KinematicBody2D2").get_node("Control").get_node("Projectile_Lifetime_Slider")
+	lifetime = lifetime_slider.value
+	var lifetimeTimer : Timer = get_node("Lifetime")
+	lifetimeTimer.start(lifetime)
+
 
 func _process(delta):
 	move(delta)
