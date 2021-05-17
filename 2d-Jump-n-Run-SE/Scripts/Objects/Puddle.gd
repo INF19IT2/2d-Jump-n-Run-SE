@@ -6,7 +6,7 @@ var player
 # damage interval in s
 var damageTime = 1
 # damage value
-var damageValue = 5
+var damageValue = 2
 
 var temp : float = damageTime
 

@@ -70,21 +70,6 @@ running={
 
 Layer=false
 
-[layer_names]
-
-2d_render/layer_1="world"
-2d_physics/layer_1="world"
-2d_render/layer_2="player"
-2d_physics/layer_2="player"
-2d_render/layer_3="enemies"
-2d_physics/layer_3="enemies"
-2d_render/layer_4="collectables"
-2d_physics/layer_4="collectables"
-2d_render/layer_5="projectiles"
-2d_physics/layer_5="projectiles"
-2d_render/layer_6="puddle"
-2d_physics/layer_6="puddle"
-
 [rendering]
 
 environment/default_environment="res://default_env.tres"
