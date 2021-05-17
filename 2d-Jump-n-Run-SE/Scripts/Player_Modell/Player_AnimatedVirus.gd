@@ -6,7 +6,6 @@ var is_moving: bool = false
 export var speed : int = 200
 export var jumpForce : int = 500
 export var gravity : int = 800
-var is_ducked: bool = false
 var velocity = Vector2()
 
 #preload projectile object
@@ -58,19 +57,16 @@ func _physics_process(delta):
 		facingRight = false
 		is_moving = true
 		
-	if velocity.length() > 0:
-		$AnimatedSprite.play("move")
-		$AnimatedSprite.set_speed_scale(5.0)
-	else:
+	#idle Animation
+	if velocity.length() == 0:
 		$AnimatedSprite.play("idle")
-		$AnimatedSprite.set_speed_scale(5.0)
 		$AnimatedSprite.animation = "idle"
 		
 	#gravity
 	velocity.y += gravity * delta
 	
-	
-	if velocity.x != 0:
+	#x-Vector > 0 --> move Animaiton
+	if velocity.x != 0 and is_on_floor():
 		$AnimatedSprite.animation = "move"
 		$AnimatedSprite.flip_v = false
 		$AnimatedSprite.flip_h = velocity.x < 0
@@ -78,20 +74,27 @@ func _physics_process(delta):
 	#define Jumping
 	if Input.is_action_just_pressed("move_up") and is_on_floor():
 		velocity.y -= jumpForce
+		$AnimatedSprite.play("jump_up")
 		
+	if velocity.y > 0 and !is_on_floor():
+		$AnimatedSprite.play("jump_down")
+
 	#define running
-	if Input.is_action_pressed("running") and is_moving and !is_ducked:
+	if Input.is_action_pressed("running") and is_moving:
+		$AnimatedSprite.set_speed_scale(2)
 		if(facingRight):
 			velocity.x += speed
 		elif(!facingRight):
 			velocity.x -= speed
+	else:
+		$AnimatedSprite.set_speed_scale(1)
 	
 	#Applying Velocity
 		#Vector2.UP -> Ground is facing up
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
 		#create projectile on player position
-	if Input.is_action_just_pressed("shoot") and is_ducked == false:
+	if Input.is_action_just_pressed("shoot"):
 		if projectileCooldown <= 0.0:
 			var projectile = PROJECTILE.instance()
 			projectile.start(position, facingRight)
