@@ -57,7 +57,7 @@ margin_bottom = 80.0
 min_value = 0.001
 max_value = 1.0
 step = 0.001
-value = 0.4
+value = 0.35
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -67,7 +67,7 @@ margin_left = 502.0
 margin_top = 1.0
 margin_right = 542.0
 margin_bottom = 15.0
-text = "Camera zoom: 0.4"
+text = "Camera zoom: 0.35"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -79,7 +79,7 @@ margin_right = 505.0
 margin_bottom = 100.0
 min_value = 10.0
 max_value = 300.0
-value = 200.0
+value = 75.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -89,7 +89,7 @@ margin_left = 502.0
 margin_top = 1.0
 margin_right = 616.0
 margin_bottom = 15.0
-text = "Player speed: 200"
+text = "Player speed: 75"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -101,7 +101,7 @@ margin_right = 505.0
 margin_bottom = 120.0
 min_value = 10.0
 max_value = 600.0
-value = 500.0
+value = 250.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -111,7 +111,7 @@ margin_left = 502.0
 margin_top = 1.0
 margin_right = 616.0
 margin_bottom = 15.0
-text = "Player jump: 500"
+text = "Player jump: 250"
 __meta__ = {
 "_edit_use_anchors_": false
 }
