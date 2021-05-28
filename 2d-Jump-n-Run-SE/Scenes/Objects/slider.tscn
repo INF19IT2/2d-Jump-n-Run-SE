@@ -166,10 +166,10 @@ margin_left = 5.0
 margin_top = 160.0
 margin_right = 505.0
 margin_bottom = 180.0
-min_value = 0.01
-max_value = 1.0
-step = 0.01
-value = 0.1
+min_value = 0.1
+max_value = 3.0
+step = 0.1
+value = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -179,7 +179,7 @@ margin_left = 502.0
 margin_top = 1.0
 margin_right = 609.0
 margin_bottom = 15.0
-text = "Projectile size: 0.1"
+text = "Projectile size: 1"
 __meta__ = {
 "_edit_use_anchors_": false
 }
