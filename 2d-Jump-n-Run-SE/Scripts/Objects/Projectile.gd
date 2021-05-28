@@ -13,7 +13,7 @@ func start(_position, _facingRight):
 func set_slider_values():
 	#speed slider
 	var speed_slider = get_parent().get_node("KinematicBody2D2").get_node("Control").get_node("Projectile_Speed_Slider")
-	speed = speed_slider.value
+	speed = speed_slider.value * 64
 	velocity.x = speed if velocity.x>0 else -speed
 	
 	#lifetime slider
