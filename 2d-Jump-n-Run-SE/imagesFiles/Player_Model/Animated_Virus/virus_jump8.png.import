@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Virus_Crouch.png-4c037912f937d71318d34dd6dab90468.stex"
+path="res://.import/virus_jump8.png-bfcb7a547d2616a724333ee7648176ec.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imagesFiles/Player_Model/Virus_Crouch.png"
-dest_files=[ "res://.import/Virus_Crouch.png-4c037912f937d71318d34dd6dab90468.stex" ]
+source_file="res://imagesFiles/Player_Model/Animated_Virus/virus_jump8.png"
+dest_files=[ "res://.import/virus_jump8.png-bfcb7a547d2616a724333ee7648176ec.stex" ]
 
 [params]
 
