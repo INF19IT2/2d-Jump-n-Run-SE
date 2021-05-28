@@ -35,14 +35,14 @@ animations = [ {
 "name": "move",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 11 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 20 ) ],
-"loop": false,
-"name": "jump_down",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 12 ) ],
 "loop": false,
 "name": "jump_up",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 11 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 20 ) ],
+"loop": false,
+"name": "jump_down",
 "speed": 10.0
 } ]
 
