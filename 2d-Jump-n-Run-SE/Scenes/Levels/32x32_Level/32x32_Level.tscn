@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Levels/32x32_Level/32_32_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Objects/Dummy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/PauseMenu/PaueMenu.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Objects/Animated_Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/32x32_Level/32x32_level.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/Objects/scientist.tscn" type="PackedScene" id=6]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 5 )
@@ -19,11 +20,10 @@ __meta__ = {
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( 720903, 5, 0, 720904, 6, 0, 720905, 7, 0, 720906, 6, 0, 720907, 7, 0, 720908, 536870917, 0, 720919, 536870916, 0, 720926, 4, 0, 786432, 3, 0, 786433, 3, 0, 786434, 0, 0, 786435, 3, 0, 786436, 2, 0, 786437, 3, 0, 786438, 0, 0, 786439, 4, 0, 786444, 536870916, 0, 786445, 1, 0, 786446, 536870915, 0, 786447, 2, 0, 786448, 1, 0, 786449, 2, 0, 786450, 2, 0, 786451, 2, 0, 786452, 2, 0, 786453, 4, 0, 786455, 536870916, 0, 786456, 536870914, 0, 786457, 536870914, 0, 786458, 536870913, 0, 786459, 536870914, 0, 786460, 536870915, 0, 786461, 536870914, 0, 786462, 4, 0 )
+tile_data = PoolIntArray( 720903, 5, 0, 720904, 6, 0, 720905, 7, 0, 720906, 6, 0, 720907, 7, 0, 720908, 536870917, 0, 720919, 536870916, 0, 720930, 4, 0, 720932, 536870916, 0, 720947, 4, 0, 786432, 3, 0, 786433, 3, 0, 786434, 0, 0, 786435, 3, 0, 786436, 2, 0, 786437, 3, 0, 786438, 0, 0, 786439, 4, 0, 786444, 536870916, 0, 786445, 1, 0, 786446, 536870915, 0, 786447, 2, 0, 786448, 1, 0, 786449, 2, 0, 786450, 2, 0, 786451, 2, 0, 786452, 2, 0, 786453, 4, 0, 786455, 536870916, 0, 786456, 536870914, 0, 786457, 536870914, 0, 786458, 536870913, 0, 786459, 536870914, 0, 786460, 536870915, 0, 786461, 536870914, 0, 786462, 2, 0, 786463, 2, 0, 786464, 0, 0, 786465, 3, 0, 786466, 4, 0, 786468, 536870916, 0, 786469, 536870912, 0, 786470, 536870914, 0, 786471, 536870914, 0, 786472, 536870915, 0, 786473, 536870912, 0, 786474, 536870915, 0, 786475, 536870915, 0, 786476, 536870915, 0, 786477, 536870915, 0, 786478, 536870913, 0, 786479, 536870914, 0, 786480, 536870915, 0, 786481, 536870915, 0, 786482, 536870915, 0, 786483, 4, 0 )
 
 [node name="KinematicBody2D2" parent="CanvasLayer" instance=ExtResource( 4 )]
-position = Vector2( 126.183, 326.6 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 136, 328 )
 
 [node name="PauseMenu" type="CanvasLayer" parent="."]
 
@@ -31,4 +31,8 @@ scale = Vector2( 0.5, 0.5 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
 position = Vector2( 848.618, 351.055 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="scientist" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1342.23, 347.641 )
 scale = Vector2( 0.5, 0.5 )

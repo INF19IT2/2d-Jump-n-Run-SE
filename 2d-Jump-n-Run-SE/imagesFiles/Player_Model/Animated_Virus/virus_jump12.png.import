@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Virus.png-ac23366b008031de499231a7178644e1.stex"
+path="res://.import/virus_jump12.png-cebba2104d461381c1aed8953c96b03c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imagesFiles/Player_Model/Virus.png"
-dest_files=[ "res://.import/Virus.png-ac23366b008031de499231a7178644e1.stex" ]
+source_file="res://imagesFiles/Player_Model/Animated_Virus/virus_jump12.png"
+dest_files=[ "res://.import/virus_jump12.png-cebba2104d461381c1aed8953c96b03c.stex" ]
 
 [params]
 

@@ -13,7 +13,7 @@ var velocity = Vector2()
 const PROJECTILE = preload("res://Scenes/Objects/Projectile.tscn")
 
 #time between shots
-const PROJECTILE_COOLDOWN_TIME = 0.25
+const PROJECTILE_COOLDOWN_TIME = 1
 var projectileCooldown = 0.0
 
 # Player stats
@@ -97,6 +97,7 @@ func _physics_process(delta):
 			var projectile = PROJECTILE.instance()
 			projectile.start(position, facingRight)
 			get_parent().add_child(projectile)
+			projectile.set_slider_values()
 			projectileCooldown = PROJECTILE_COOLDOWN_TIME
 	projectileCooldown -= delta
 
