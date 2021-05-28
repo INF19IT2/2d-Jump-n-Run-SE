@@ -17,7 +17,7 @@ _global_script_class_icons={
 
 config/name="2d- Jump-n- Run- Se"
 run/main_scene="res://Scenes/MainScene/MainScene.tscn"
-config/icon="res://icon.png"
+config/icon="res://imagesFiles/MISC/icon.png"
 
 [input]
 
