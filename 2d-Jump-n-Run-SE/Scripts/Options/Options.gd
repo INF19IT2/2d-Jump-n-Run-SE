@@ -5,23 +5,23 @@ var resolutions = [Vector2(),Vector2(1920,1080),Vector2(1280,720),Vector2(800,60
 var resolutionDropdown
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	resolutionDropdown = get_node("OptionsBackground/GraphicOptions/ResolutionOptions")
+	resolutionDropdown = get_node("OptionsBackground/Resolution/ResolutionDropdown")
 	var currentResolution = OS.window_size
 	resolutionDropdown.set_item_text(0,String(currentResolution[0]) + "x" + String(currentResolution[1]))
 	resolutions[0] = Vector2(currentResolution[0],currentResolution[1])
-	get_node("OptionsBackground/GraphicOptions/CheckButton").pressed = OS.window_fullscreen
+	get_node("OptionsBackground/Fullscreen/FullscreenCheckBox").pressed = OS.window_fullscreen
 	hide()
 
-func _on_ResolutionOptions_item_selected(index):
+func _on_ResolutionDropdown_item_selected(index):
 	if(OS.window_fullscreen):
 		OS.window_fullscreen = false
-		get_node("OptionsBackground/GraphicOptions/CheckButton").pressed = false
+		get_node("OptionsBackground/Fullscreen/FullscreenCheckBox").pressed = false
 	var selectedResolution = resolutions[resolutionDropdown.get_selected_id()]
 	changeWindowAndPopupSize(selectedResolution)
 
 
-func _on_CheckButton_toggled(button_pressed):
-	var resOptions = get_node("OptionsBackground/GraphicOptions/ResolutionOptions")
+func _on_FullscreenCheckBox_toggled(button_pressed):
+	var resOptions = get_node("OptionsBackground/Resolution/ResolutionDropdown")
 	OS.window_fullscreen = button_pressed
 	if(button_pressed):
 		changeWindowAndPopupSize(OS.get_screen_size())

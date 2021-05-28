@@ -6,7 +6,7 @@
 [ext_resource path="res://imagesFiles/Main_Scene/2699.png" type="Texture" id=4]
 [ext_resource path="res://imagesFiles/Main_Scene/StartLevel_Button.png" type="Texture" id=5]
 [ext_resource path="res://Scripts/MainScene/MainScene.gd" type="Script" id=6]
-[ext_resource path="res://Scenes/Options/OptionsMenu.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Options/NewOptionsMenu.tscn" type="PackedScene" id=7]
 [ext_resource path="res://fonts/ComicNeue-Regular.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://fonts/ComicNeue-Italic.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://fonts/ComicNeue-BoldItalic.ttf" type="DynamicFontData" id=10]
@@ -108,12 +108,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Options" parent="." instance=ExtResource( 7 )]
-margin_left = 1.37811
-margin_top = 3.53987
-margin_right = 1.37817
-margin_bottom = 3.53986
-
 [node name="LineEdit" type="LineEdit" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -205,6 +199,16 @@ fit_content_height = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Options" parent="." instance=ExtResource( 7 )]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -160.0
+margin_top = -256.0
+margin_right = 160.0
+margin_bottom = 256.0
 
 [connection signal="pressed" from="ExitButton" to="." method="_on_ExitButton_pressed"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_OptionsButton_pressed"]

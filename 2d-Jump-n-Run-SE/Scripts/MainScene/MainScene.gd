@@ -15,4 +15,4 @@ func _on_StartLevelButton_pressed():
 
 
 func _on_OptionsButton_pressed():
-	get_node("Options").popup_centered(OS.window_size)
+	get_node("Options").popup_centered()
