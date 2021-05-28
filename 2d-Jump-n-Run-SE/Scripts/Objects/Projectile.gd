@@ -4,6 +4,7 @@ var velocity = Vector2()
 export var speed = 64
 export var damage = 5
 export var lifetime = 4
+onready var animatedSprite = $AnimatedSprite
 
 func start(_position, _facingRight):
 	$Lifetime.wait_time = lifetime
@@ -12,7 +13,6 @@ func start(_position, _facingRight):
 
 
 func _ready():
-	#if get_parent().get_node("KinematicBody2D2").get_node("Control").get_node("Projectile_Speed_Slider")
 	var slider = get_parent()
 	if slider.name != "Node2D":
 		slider = slider.get_parent()
@@ -24,7 +24,7 @@ func set_slider_values():
 	var speed_slider = get_parent()
 	if speed_slider.name != "Node2D":
 		speed_slider = speed_slider.get_parent()
-	speed_slider = speed_slider.get_node("CanvasLayer").get_node("KinematicBody2D2").get_node("Control").get_node("Projectile_Speed_Slider")
+	speed_slider = speed_slider.get_node("CanvasLayer").get_node("Virus").get_node("Control").get_node("Projectile_Speed_Slider")
 	speed = speed_slider.value * 64
 	velocity.x = speed if velocity.x>0 else -speed
 
@@ -32,7 +32,7 @@ func set_slider_values():
 	var lifetime_slider = get_parent()
 	if lifetime_slider.name != "Node2D":
 		lifetime_slider = lifetime_slider.get_parent()
-	lifetime_slider = lifetime_slider.get_node("CanvasLayer").get_node("KinematicBody2D2").get_node("Control").get_node("Projectile_Lifetime_Slider")
+	lifetime_slider = lifetime_slider.get_node("CanvasLayer").get_node("Virus").get_node("Control").get_node("Projectile_Lifetime_Slider")
 	lifetime = lifetime_slider.value
 	var lifetimeTimer : Timer = get_node("Lifetime")
 	lifetimeTimer.start(lifetime)
@@ -41,14 +41,14 @@ func set_slider_values():
 	var size_slider = get_parent()
 	if size_slider.name != "Node2D":
 		size_slider = size_slider.get_parent()
-	size_slider = size_slider.get_node("CanvasLayer").get_node("KinematicBody2D2").get_node("Control").get_node("Projectile_Size_Slider")
+	size_slider = size_slider.get_node("CanvasLayer").get_node("Virus").get_node("Control").get_node("Projectile_Size_Slider")
 	var scaling_value = size_slider.value
 	scale = Vector2(scaling_value,scaling_value)
 
 func _process(delta):
 	move(delta)
-	if($AnimatedSprite):
-		$AnimatedSprite.play("default")
+	if(animatedSprite):
+		animatedSprite.play("default")
 
 func move(delta):
 	position += velocity * delta

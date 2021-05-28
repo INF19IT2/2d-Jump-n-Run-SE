@@ -1,10 +1,5 @@
 extends Area2D
 
-
-# Declare member variables here.
-onready var checkpoint_default = $Sprite
-onready var checkpoint_active = $Sprite2
-
 var entered = false
 
 # Called when the node enters the scene tree for the first time.
