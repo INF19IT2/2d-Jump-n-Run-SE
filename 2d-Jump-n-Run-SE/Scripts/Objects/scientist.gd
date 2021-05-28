@@ -59,6 +59,7 @@ func _physics_process(delta):
 		var projectile = PROJECTILE.instance()
 		projectile.start(position, facingRight)
 		get_parent().add_child(projectile)
+		projectile.set_slider_values()
 		projectileCooldown = PROJECTILE_COOLDOWN_TIME
 	
 	#
