@@ -26,14 +26,14 @@ func _ready():
 
 func _physics_process(delta):
 	
-	var playerPos = get_parent().get_node("CanvasLayer").get_node("Player").position.x
+	var playerPos = get_parent().get_node("CanvasLayer").get_node("KinematicBody2D2").position.x
 	
-	if(abs(playerPos - self.position.x) <= 700 and activated == false):
+	if(abs(playerPos - self.position.x) <= 200 and activated == false):
 		activated = true
 	
 	#define movement
 	if (activated):
-		if (abs(playerPos - self.position.x) >= (64 * 4)):
+		if (abs(playerPos - self.position.x) >= (32 * 4)):
 				if(playerPos > self.position.x and velocity.x <= 0):
 					velocity.x += speed
 					facingRight = true
@@ -42,7 +42,7 @@ func _physics_process(delta):
 						velocity.x -= speed
 						facingRight = false
 		else:
-			if(get_parent().get_node("CanvasLayer").get_node("Player").velocity.x == 0):
+			if(get_parent().get_node("CanvasLayer").get_node("KinematicBody2D2").velocity.x == 0):
 				velocity.x = 0
 			else: 
 				if(playerPos > self.position.x and velocity.x >= 0):
