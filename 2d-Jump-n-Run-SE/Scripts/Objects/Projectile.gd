@@ -29,6 +29,8 @@ func set_slider_values():
 
 func _process(delta):
 	move(delta)
+	if($AnimatedSprite):
+		$AnimatedSprite.play("default")
 
 func move(delta):
 	position += velocity * delta
