@@ -63,7 +63,7 @@ shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-zoom = Vector2( 0.4, 0.4 )
+zoom = Vector2( 0.35, 0.35 )
 smoothing_speed = 2.0
 
 [node name="HealthBar" parent="." instance=ExtResource( 21 )]
