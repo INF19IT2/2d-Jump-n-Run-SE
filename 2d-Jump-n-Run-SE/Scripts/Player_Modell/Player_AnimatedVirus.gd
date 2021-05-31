@@ -3,8 +3,8 @@ extends KinematicBody2D
 signal hit
 var is_moving: bool = false
 
-export var speed : int = 200
-export var jumpForce : int = 500
+export var speed : int = 75
+export var jumpForce : int = 250
 export var gravity : int = 800
 var velocity = Vector2()
 
