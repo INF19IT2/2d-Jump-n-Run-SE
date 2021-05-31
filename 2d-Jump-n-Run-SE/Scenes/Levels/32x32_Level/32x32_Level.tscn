@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/Levels/32x32_Level/32_32_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Objects/Dummy.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scenes/Objects/Checkpoint.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Objects/Puddle.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Objects/Invincibility_Star.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Objects/Life_Potion.tscn" type="PackedScene" id=10]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 5 )
@@ -50,3 +51,6 @@ position = Vector2( 322.109, 341.474 )
 
 [node name="Node2D" parent="." instance=ExtResource( 9 )]
 position = Vector2( 460.572, 374.599 )
+
+[node name="Life_Potion" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1264, 315.055 )
