@@ -39,4 +39,8 @@ func changeWindowAndPopupSize(newWindowSize):
 	OS.window_size = newWindowSize
 	OS.center_window()
 	hide()
-	popup_centered(newWindowSize)
+	popup_centered_ratio()
+
+
+func _on_FullscreenLabel_focus_entered():
+	hide()

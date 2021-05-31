@@ -1,7 +1,6 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=19 format=2]
 
-[ext_resource path="res://imagesFiles/Main_Scene/High-Score_Button.png" type="Texture" id=1]
-[ext_resource path="res://imagesFiles/Main_Scene/grey_background.png" type="Texture" id=2]
+[ext_resource path="res://imagesFiles/Main_Scene/menu_wallpaper_final.png" type="Texture" id=1]
 [ext_resource path="res://imagesFiles/Main_Scene/Exit_Button.png" type="Texture" id=3]
 [ext_resource path="res://imagesFiles/Main_Scene/2699.png" type="Texture" id=4]
 [ext_resource path="res://imagesFiles/Main_Scene/StartLevel_Button.png" type="Texture" id=5]
@@ -46,7 +45,7 @@ bg_color = Color( 1, 0, 0, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = SubResource( 2 )
-texture = ExtResource( 2 )
+texture = ExtResource( 1 )
 expand = true
 script = ExtResource( 6 )
 __meta__ = {
@@ -59,24 +58,10 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -91.0
-margin_top = 88.0
+margin_top = 4.0
 margin_right = 91.0
-margin_bottom = 178.0
+margin_bottom = 94.0
 texture_normal = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="HighScoreButton" type="TextureButton" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -91.0
-margin_top = -2.0
-margin_right = 91.0
-margin_bottom = 88.0
-texture_normal = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -89,6 +74,7 @@ margin_top = 52.0
 margin_right = -447.74
 margin_bottom = -36.0
 rect_scale = Vector2( 0.2, 0.2 )
+toggle_mode = true
 texture_normal = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -205,11 +191,33 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -512.0
-margin_top = -300.0
-margin_right = 512.0
-margin_bottom = 300.0
+margin_left = -160.0
+margin_top = -256.0
+margin_right = 160.0
+margin_bottom = 256.0
+
+[node name="adsfasd" type="TextureButton" parent="."]
+visible = false
+modulate = Color( 0.4, 0.458824, 0.498039, 1 )
+margin_left = 65.0
+margin_top = 52.0
+margin_right = 167.0
+margin_bottom = 152.0
+toggle_mode = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReturnButton" type="Polygon2D" parent="."]
+visible = false
+modulate = Color( 0.4, 0.458824, 0.498039, 1 )
+position = Vector2( 65, 52 )
+polygon = PoolVector2Array( -1, 52, 39, 12, 39, 36, 103, 36, 103, 68, 39, 68, 39, 92 )
 
 [connection signal="pressed" from="ExitButton" to="." method="_on_ExitButton_pressed"]
+[connection signal="button_down" from="OptionsButton" to="." method="_on_OptionsButton_button_down"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_OptionsButton_pressed"]
 [connection signal="pressed" from="StartLevelButton" to="." method="_on_StartLevelButton_pressed"]
+[connection signal="hide" from="Options" to="." method="_on_Options_hide"]
+[connection signal="button_down" from="adsfasd" to="." method="_on_ReturnButton_button_down"]
+[connection signal="pressed" from="adsfasd" to="." method="_on_ReturnButton_pressed"]
