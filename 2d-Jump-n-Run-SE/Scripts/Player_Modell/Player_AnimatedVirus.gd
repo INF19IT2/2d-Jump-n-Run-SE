@@ -125,6 +125,12 @@ func add_collectable():
 	var lab = get_node("Label")
 	lab.set_text(str(coins))
 
+	#called when the player "collects" a life-potion
+	#player-hp get filled up to 100% 
+func life_potion(): 
+	health = health_max
+	emit_signal("player_stats_changed", self)
+
 func change_player_size(value):
 	$AnimatedSprite.scale = Vector2(value, value)
 	$CollisionShape2D.scale = Vector2(value, value)
