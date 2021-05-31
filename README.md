@@ -48,5 +48,3 @@ Wenn man das zum ersten mal macht wird man ein Template herunterladen müssen. D
 Hier ein kleines Video tutorial zum Export in Godot:
 https://youtu.be/cXahUh9Zfho?t=40
 
-## Google-Drive Link zu allen relevanten Dokumenten
-https://drive.google.com/drive/folders/1fcZYi8vxpXD6oUy3UmAal-U4MVxDlJ2M?usp=sharing
