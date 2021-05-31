@@ -4,14 +4,13 @@ var velocity = Vector2()
 export var speed = 64
 export var damage = 5
 export var lifetime = 4
+var movingRight: bool
 
 func start(_position, _facingRight, _creator):
 	$Lifetime.wait_time = lifetime
 	position = _position
-	#if _creator == "enemy":
-	#	$AnimatedSprite.play("default")
 	velocity.x = speed if _facingRight else -speed
-
+	movingRight = _facingRight
 
 func _ready():
 	var slider = get_parent()
@@ -19,6 +18,8 @@ func _ready():
 		slider = slider.get_parent()
 	slider.connect("projectile_speed_slider_changed", self, "set_speed")
 	slider.connect("projectile_size_slider_changed", self, "set_size")
+	if $AnimatedSprite:
+		$AnimatedSprite.flip_h = movingRight
 		
 func set_slider_values():
 	#speed slider
