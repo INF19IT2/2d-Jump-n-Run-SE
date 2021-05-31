@@ -1,14 +1,35 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://imagesFiles/Main_Scene/grey_background.png" type="Texture" id=1]
+[ext_resource path="res://imagesFiles/Background/MainBackground5.png" type="Texture" id=1]
 [ext_resource path="res://imagesFiles/Main_Scene/Exit_Button.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/LevelSelection/LevelSelection.gd" type="Script" id=3]
 [ext_resource path="res://imagesFiles/Main_Scene/StartLevel_Button.png" type="Texture" id=4]
+[ext_resource path="res://imagesFiles/Background/MainBackground4.png" type="Texture" id=5]
+[ext_resource path="res://imagesFiles/Background/MainBackground3.png" type="Texture" id=6]
+[ext_resource path="res://imagesFiles/Background/MainBackground2.png" type="Texture" id=7]
+[ext_resource path="res://imagesFiles/Background/MainBackground1.png" type="Texture" id=8]
+[ext_resource path="res://Scripts/Audio/Audio_MainMenu.gd" type="Script" id=9]
+[ext_resource path="res://sound/Menu_intro.wav" type="AudioStream" id=10]
+[ext_resource path="res://sound/Menu_Loop.wav" type="AudioStream" id=11]
+
+[sub_resource type="AnimatedTexture" id=1]
+flags = 4
+frames = 5
+fps = 10.0
+frame_0/texture = ExtResource( 8 )
+frame_1/texture = ExtResource( 7 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 6 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 5 )
+frame_3/delay_sec = 0.0
+frame_4/texture = ExtResource( 1 )
+frame_4/delay_sec = 0.0
 
 [node name="LevelSelection" type="TextureRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 1 )
+texture = SubResource( 1 )
 expand = true
 script = ExtResource( 3 )
 __meta__ = {
@@ -108,7 +129,18 @@ text = "3"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Audio" type="Node" parent="."]
+script = ExtResource( 9 )
+
+[node name="Intro" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 10 )
+
+[node name="Loop" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 11 )
 [connection signal="pressed" from="ExitButton" to="." method="_on_ExitButton_pressed"]
 [connection signal="pressed" from="Level1Button" to="." method="_on_Level1Button_pressed"]
 [connection signal="pressed" from="Level2Button" to="." method="_on_Level2Button_pressed"]
 [connection signal="pressed" from="Level3Button" to="." method="_on_Level3Button_pressed"]
+[connection signal="finished" from="Audio/Intro" to="Audio" method="_on_Intro_finished"]
+[connection signal="finished" from="Audio/Loop" to="Audio" method="_on_Loop_finished"]

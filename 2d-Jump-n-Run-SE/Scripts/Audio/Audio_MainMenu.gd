@@ -12,6 +12,8 @@ func _process(delta):
 
 
 func _on_Intro_finished():
+	_on_Loop_finished()
+
+
+func _on_Loop_finished():
 	get_node("Loop").play()
-	get_node("Loop").autoplay = true
-	pass # Replace with function body.

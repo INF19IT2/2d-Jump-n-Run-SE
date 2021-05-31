@@ -19,15 +19,15 @@ extents = Vector2( 13.8242, 5.67137 )
 
 [node name="Projectile" type="Area2D"]
 scale = Vector2( 0.25, 0.25 )
-collision_layer = 16
+collision_layer = 32
 collision_mask = 19
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
+playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 2.3547, -2.14102 )
 shape = SubResource( 2 )
 
 [node name="Lifetime" type="Timer" parent="."]
