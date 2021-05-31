@@ -50,7 +50,7 @@ scale = Vector2( 0.5, 0.5 )
 position = Vector2( 322.109, 341.474 )
 
 [node name="Node2D" parent="." instance=ExtResource( 9 )]
-position = Vector2( 460.572, 374.599 )
+position = Vector2( 460.219, 326.516 )
 
 [node name="Life_Potion" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1264, 315.055 )

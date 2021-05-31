@@ -150,3 +150,6 @@ func change_speed(value):
 
 func change_jump(value):
 	jumpForce = value
+
+func get_name():
+	return "Player"
