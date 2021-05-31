@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+path="res://.import/capture_animation.png-8694a1cd8f295eec50dbba5869aa64d6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon.png"
-dest_files=[ "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex" ]
+source_file="res://imagesFiles/Checkpoint/capture_animation.png"
+dest_files=[ "res://.import/capture_animation.png-8694a1cd8f295eec50dbba5869aa64d6.stex" ]
 
 [params]
 

@@ -14,6 +14,8 @@ signal dummy_slider_changed
 signal camera_slider_changed
 signal speed_slider_changed
 signal jump_slider_changed
+signal projectile_speed_slider_changed
+signal projectile_size_slider_changed
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -48,6 +50,7 @@ func _on_Jump_Slider_value_changed(value):
 
 func _on_Projectile_Speed_Slider_value_changed(value):
 	projectile_speed_label.set_text("Projectile speed: " + str(value))
+	emit_signal("projectile_speed_slider_changed", value)
 
 
 func _on_Projectile_Lifetime_Slider_value_changed(value):
@@ -56,3 +59,4 @@ func _on_Projectile_Lifetime_Slider_value_changed(value):
 
 func _on_Projectile_Size_Slider_value_changed(value):
 	projectile_size_label.set_text("Projectile size: " + str(value))
+	emit_signal("projectile_size_slider_changed", value)

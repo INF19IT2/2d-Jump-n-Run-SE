@@ -13,7 +13,7 @@ var activated = false
 const PROJECTILE = preload("res://Scenes/Objects/Projectile_Enemies.tscn")
 
 #time between shots
-const PROJECTILE_COOLDOWN_TIME = 0.75
+const PROJECTILE_COOLDOWN_TIME = 1
 var projectileCooldown = 0.0
 
 var velocity = Vector2()
@@ -26,7 +26,7 @@ func _ready():
 
 func _physics_process(delta):
 	
-	var playerPos = get_parent().get_node("CanvasLayer").get_node("KinematicBody2D2").position.x
+	var playerPos = get_parent().get_node("CanvasLayer").get_node("Virus").position.x
 	
 	if(abs(playerPos - self.position.x) <= 200 and activated == false):
 		activated = true
@@ -42,7 +42,7 @@ func _physics_process(delta):
 						velocity.x -= speed
 						facingRight = false
 		else:
-			if(get_parent().get_node("CanvasLayer").get_node("KinematicBody2D2").velocity.x == 0):
+			if(get_parent().get_node("CanvasLayer").get_node("Virus").velocity.x == 0):
 				velocity.x = 0
 			else: 
 				if(playerPos > self.position.x and velocity.x >= 0):
@@ -59,6 +59,7 @@ func _physics_process(delta):
 		var projectile = PROJECTILE.instance()
 		projectile.start(position, facingRight)
 		get_parent().add_child(projectile)
+		projectile.set_slider_values()
 		projectileCooldown = PROJECTILE_COOLDOWN_TIME
 	
 	#
