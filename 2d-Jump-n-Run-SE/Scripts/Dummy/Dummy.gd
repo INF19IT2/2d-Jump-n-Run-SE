@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 
 # Declare member variables here. Examples:
-var health : int = 100
+var health : int = 1
 var count : int = 0
 export var speed : int = 200
 export var jumpForce : int = 500

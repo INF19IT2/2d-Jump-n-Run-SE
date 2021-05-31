@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 # Declare member variables here. Examples:
-var health : int = 100
+var health : int = 3
 var count : int = 0
 export var speed : int = 200
 export var jumpForce : int = 500
@@ -13,7 +13,7 @@ var activated = false
 const PROJECTILE = preload("res://Scenes/Objects/Projectile_Enemies.tscn")
 
 #time between shots
-const PROJECTILE_COOLDOWN_TIME = 0.75
+const PROJECTILE_COOLDOWN_TIME = 1
 var projectileCooldown = 0.0
 
 var velocity = Vector2()
@@ -26,23 +26,26 @@ func _ready():
 
 func _physics_process(delta):
 	
-	var playerPos = get_parent().get_node("CanvasLayer").get_node("Player").position.x
+	var playerPos = get_parent().get_node("CanvasLayer").get_node("Virus").position.x
 	
-	if(abs(playerPos - self.position.x) <= 700 and activated == false):
+	if(abs(playerPos - self.position.x) <= 200 and activated == false):
 		activated = true
 	
 	#define movement
 	if (activated):
-		if (abs(playerPos - self.position.x) >= (64 * 4)):
-				if(playerPos > self.position.x and velocity.x <= 0):
-					velocity.x += speed
-					facingRight = true
-				else:
-					if(velocity.x >= 0):
-						velocity.x -= speed
-						facingRight = false
+		$AnimatedSprite.play("walk")
+		if velocity.x != 0:
+			$AnimatedSprite.flip_h = velocity.x < 0
+		if (abs(playerPos - self.position.x) >= (32 * 4)):
+			if(playerPos > self.position.x and velocity.x <= 0):
+				velocity.x += speed
+				facingRight = true
+			else:
+				if(velocity.x >= 0):
+					velocity.x -= speed
+					facingRight = false
 		else:
-			if(get_parent().get_node("CanvasLayer").get_node("Player").velocity.x == 0):
+			if(get_parent().get_node("CanvasLayer").get_node("Virus").velocity.x == 0):
 				velocity.x = 0
 			else: 
 				if(playerPos > self.position.x and velocity.x >= 0):
@@ -57,9 +60,11 @@ func _physics_process(delta):
 	#create projectile on scientist position
 	if projectileCooldown <= 0.0 and activated:
 		var projectile = PROJECTILE.instance()
-		projectile.start(position, facingRight)
+		projectile.start(position, facingRight, "enemy")
 		get_parent().add_child(projectile)
+		projectile.set_slider_values()
 		projectileCooldown = PROJECTILE_COOLDOWN_TIME
+	
 	
 	#
 	projectileCooldown -= delta
