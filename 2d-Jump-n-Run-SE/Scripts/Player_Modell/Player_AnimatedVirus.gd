@@ -119,7 +119,6 @@ func take_damage(dmg):
 			health -= dmg
 			emit_signal("player_stats_changed", self)
 		else:
-			print("Dead")
 			respawn()
 	
 func add_collectable():
