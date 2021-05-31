@@ -99,7 +99,7 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
 		#create projectile on player position
-	if Input.is_action_just_pressed("shoot"):
+	if Input.is_action_pressed("shoot"):
 		if projectileCooldown <= 0.0:
 			var projectile = PROJECTILE.instance()
 			projectile.start(position, facingRight, "player")
