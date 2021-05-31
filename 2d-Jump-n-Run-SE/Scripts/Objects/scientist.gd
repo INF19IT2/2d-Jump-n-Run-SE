@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 # Declare member variables here. Examples:
-var health : int = 100
+var health : int = 3
 var count : int = 0
 export var speed : int = 200
 export var jumpForce : int = 500
@@ -27,34 +27,40 @@ func _ready():
 func _physics_process(delta):
 	
 	var playerPos = get_parent().get_node("CanvasLayer").get_node("Virus").position.x
+	var playerSpeed = get_parent().get_node("CanvasLayer").get_node("Virus").velocity.x
 	
-	if(abs(playerPos - self.position.x) <= 200 and activated == false):
+	if(abs(playerPos - self.position.x) <= 300 and activated == false):
 		activated = true
+	else:
+		activated = false
 	
 	#define movement
 	if (activated):
+		if (playerPos < self.position.x):
+			facingRight = false
+			$AnimatedSprite.flip_h = !facingRight
+		else:
+			facingRight = true
+			$AnimatedSprite.flip_h = !facingRight
 		$AnimatedSprite.play("walk")
-		if velocity.x != 0:
-			$AnimatedSprite.flip_h = velocity.x < 0
-		if (abs(playerPos - self.position.x) >= (32 * 4)):
+#		if velocity.x != 0:
+#			$AnimatedSprite.flip_h = velocity.x < 0
+		if (abs(playerPos - self.position.x) > ((32 * 4)+(self.speed*0.075))):
 			if(playerPos > self.position.x and velocity.x <= 0):
 				velocity.x += speed
-				facingRight = true
 			else:
-				if(velocity.x >= 0):
+				if(playerPos < self.position.x and velocity.x >= 0):
 					velocity.x -= speed
-					facingRight = false
-		else:
-			if(get_parent().get_node("CanvasLayer").get_node("Virus").velocity.x == 0):
-				velocity.x = 0
-			else: 
-				if(playerPos > self.position.x and velocity.x >= 0):
-					velocity.x -= speed
-					facingRight = true
-				else:
-					if(velocity.x <= 0):
-						velocity.x += speed
-						facingRight = false
+		elif (abs(playerPos - self.position.x) >= ((32 * 4)-(self.speed*0.075)) and abs(playerPos - self.position.x) <= ((32 * 4)+(self.speed*0.075)) and playerSpeed == 0):
+			velocity.x = 0	
+			$AnimatedSprite.stop()
+			$AnimatedSprite.frame = 0
+		else: 
+			if(playerPos > self.position.x and velocity.x >= 0):
+				velocity.x -= speed
+			else:
+				if(playerPos < self.position.x and velocity.x <= 0):
+					velocity.x += speed
 
 	
 	#create projectile on scientist position
