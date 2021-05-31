@@ -101,7 +101,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("shoot"):
 		if projectileCooldown <= 0.0:
 			var projectile = PROJECTILE.instance()
-			projectile.start(position, facingRight)
+			projectile.start(position, facingRight, "player")
 			get_parent().add_child(projectile)
 			projectile.set_slider_values()
 			projectileCooldown = PROJECTILE_COOLDOWN_TIME
