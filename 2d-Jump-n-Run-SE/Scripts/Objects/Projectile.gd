@@ -61,12 +61,15 @@ func _on_Projectile_body_entered(body):
 		body.take_damage(damage)
 	if body.has_method('get_infected'):
 		body.get_infected()
+	if body.get("ISCRATE"):
+		body.crate_destroy()
 
 func _on_Projectile_area_entered(area):
 	dissolveProjectile()
 	if area.has_method('dissolveProjectile'):
 		area.dissolveProjectile()
-	
+
+
 func _on_Lifetime_timeout():
 	dissolveProjectile()
 

@@ -206,7 +206,6 @@ visible = false
 modulate = Color( 0.4, 0.458824, 0.498039, 1 )
 position = Vector2( 65, 52 )
 polygon = PoolVector2Array( -1, 52, 39, 12, 39, 36, 103, 36, 103, 68, 39, 68, 39, 92 )
-
 [connection signal="pressed" from="ExitButton" to="." method="_on_ExitButton_pressed"]
 [connection signal="button_down" from="OptionsButton" to="." method="_on_OptionsButton_button_down"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_OptionsButton_pressed"]
