@@ -12,7 +12,7 @@ var velocity = Vector2()
 const PROJECTILE = preload("res://Scenes/Objects/Projectile.tscn")
 
 #time between shots
-const PROJECTILE_COOLDOWN_TIME = 1
+const PROJECTILE_COOLDOWN_TIME = 0.3
 var projectileCooldown = 0.0
 
 # Player stats
