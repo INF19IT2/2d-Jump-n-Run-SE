@@ -4,11 +4,12 @@ var velocity = Vector2()
 export var speed = 64
 export var damage = 5
 export var lifetime = 4
-onready var animatedSprite = $AnimatedSprite
 
-func start(_position, _facingRight):
+func start(_position, _facingRight, _creator):
 	$Lifetime.wait_time = lifetime
 	position = _position
+	if _creator == "enemy":
+		$AnimatedSprite.play("default")
 	velocity.x = speed if _facingRight else -speed
 
 
@@ -47,8 +48,6 @@ func set_slider_values():
 
 func _process(delta):
 	move(delta)
-	if(animatedSprite):
-		animatedSprite.play("default")
 
 func move(delta):
 	position += velocity * delta
