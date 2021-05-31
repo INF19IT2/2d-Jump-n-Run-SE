@@ -3,8 +3,8 @@ extends KinematicBody2D
 signal hit
 var is_moving: bool = false
 
-export var speed : int = 200
-export var jumpForce : int = 500
+export var speed : int = 75
+export var jumpForce : int = 250
 export var gravity : int = 800
 var velocity = Vector2()
 
@@ -124,6 +124,12 @@ func add_collectable():
 	coins += 1
 	var lab = get_node("Label")
 	lab.set_text(str(coins))
+
+	#called when the player "collects" a life-potion
+	#player-hp get filled up to 100% 
+func life_potion(): 
+	health = health_max
+	emit_signal("player_stats_changed", self)
 
 func change_player_size(value):
 	$AnimatedSprite.scale = Vector2(value, value)
