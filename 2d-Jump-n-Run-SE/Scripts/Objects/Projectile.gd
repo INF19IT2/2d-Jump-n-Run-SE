@@ -8,8 +8,8 @@ export var lifetime = 4
 func start(_position, _facingRight, _creator):
 	$Lifetime.wait_time = lifetime
 	position = _position
-	if _creator == "enemy":
-		$AnimatedSprite.play("default")
+	#if _creator == "enemy":
+	#	$AnimatedSprite.play("default")
 	velocity.x = speed if _facingRight else -speed
 
 
