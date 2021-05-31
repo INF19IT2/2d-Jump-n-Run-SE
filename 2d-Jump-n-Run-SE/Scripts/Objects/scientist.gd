@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 # Declare member variables here. Examples:
-var health : int = 100
+var health : int = 3
 var count : int = 0
 export var speed : int = 200
 export var jumpForce : int = 500
@@ -60,10 +60,11 @@ func _physics_process(delta):
 	#create projectile on scientist position
 	if projectileCooldown <= 0.0 and activated:
 		var projectile = PROJECTILE.instance()
-		projectile.start(position, facingRight)
+		projectile.start(position, facingRight, "enemy")
 		get_parent().add_child(projectile)
 		projectile.set_slider_values()
 		projectileCooldown = PROJECTILE_COOLDOWN_TIME
+	
 	
 	#
 	projectileCooldown -= delta
