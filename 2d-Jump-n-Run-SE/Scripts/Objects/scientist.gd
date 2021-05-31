@@ -33,14 +33,17 @@ func _physics_process(delta):
 	
 	#define movement
 	if (activated):
+		$AnimatedSprite.play("walk")
+		if velocity.x != 0:
+			$AnimatedSprite.flip_h = velocity.x < 0
 		if (abs(playerPos - self.position.x) >= (32 * 4)):
-				if(playerPos > self.position.x and velocity.x <= 0):
-					velocity.x += speed
-					facingRight = true
-				else:
-					if(velocity.x >= 0):
-						velocity.x -= speed
-						facingRight = false
+			if(playerPos > self.position.x and velocity.x <= 0):
+				velocity.x += speed
+				facingRight = true
+			else:
+				if(velocity.x >= 0):
+					velocity.x -= speed
+					facingRight = false
 		else:
 			if(get_parent().get_node("CanvasLayer").get_node("Virus").velocity.x == 0):
 				velocity.x = 0
