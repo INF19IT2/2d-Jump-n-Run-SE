@@ -5,12 +5,14 @@ export var speed = 64
 export var damage = 5
 export var lifetime = 4
 var movingRight: bool
+var creator
 
 func start(_position, _facingRight, _creator):
 	$Lifetime.wait_time = lifetime
 	position = _position
 	velocity.x = speed if _facingRight else -speed
 	movingRight = _facingRight
+	creator = _creator
 
 func _ready():
 	var slider = get_parent()
@@ -18,7 +20,7 @@ func _ready():
 		slider = slider.get_parent()
 	slider.connect("projectile_speed_slider_changed", self, "set_speed")
 	slider.connect("projectile_size_slider_changed", self, "set_size")
-	if $AnimatedSprite:
+	if creator == "enemy":
 		$AnimatedSprite.flip_h = movingRight
 		
 func set_slider_values():
