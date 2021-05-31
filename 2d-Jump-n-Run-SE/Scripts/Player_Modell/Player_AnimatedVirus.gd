@@ -22,6 +22,7 @@ var health_max : int = 10
 signal player_dead
 signal player_stats_changed
 
+var invincible = false
 
 var coins : int = 0
 
@@ -113,17 +114,24 @@ func _physics_process(delta):
 		
 
 func take_damage(dmg):
-	if health > dmg:
-		health -= dmg
-		emit_signal("player_stats_changed", self)
-	else:
-		print("Dead")
-		respawn()
+	if !invincible:
+		if health > dmg:
+			health -= dmg
+			emit_signal("player_stats_changed", self)
+		else:
+			print("Dead")
+			respawn()
 	
 func add_collectable():
 	coins += 1
 	var lab = get_node("Label")
 	lab.set_text(str(coins))
+
+#player is invincible for 5 seconds
+func add_star():
+	invincible = true
+	yield(get_tree().create_timer(5.0), "timeout")
+	invincible = false
 
 func change_player_size(value):
 	$AnimatedSprite.scale = Vector2(value, value)
