@@ -64,6 +64,7 @@ func _on_Projectile_body_entered(body):
 	if body.get("ISCRATE"):
 		body.crate_destroy()
 
+
 func _on_Projectile_area_entered(area):
 	dissolveProjectile()
 	if area.has_method('dissolveProjectile'):

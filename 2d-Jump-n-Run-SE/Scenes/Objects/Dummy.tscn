@@ -1,11 +1,32 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Dummy/Dummy.gd" type="Script" id=1]
-[ext_resource path="res://imagesFiles/MISC/placeholder.png" type="Texture" id=2]
-[ext_resource path="res://imagesFiles/Dummy/placeholder_infected.png" type="Texture" id=3]
+[ext_resource path="res://imagesFiles/Dummy/guy_waling_animation.png" type="Texture" id=2]
 
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 32, 64 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 32, 0, 32, 64 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 64, 32, 64 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 32, 64 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
@@ -13,18 +34,11 @@ collision_layer = 4
 collision_mask = 7
 script = ExtResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.053, 0.142 )
-texture = ExtResource( 2 )
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0.623482, -1.12246 )
+scale = Vector2( 1.95104, 1.98354 )
+frames = SubResource( 4 )
+playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
-
-[node name="Infectiontimer" type="Timer" parent="."]
-wait_time = 5.0
-
-[node name="Sprite2" type="Sprite" parent="."]
-visible = false
-scale = Vector2( 0.054, 0.16 )
-texture = ExtResource( 3 )
-[connection signal="timeout" from="Infectiontimer" to="." method="_on_Infectiontimer_timeout"]
+shape = SubResource( 5 )
