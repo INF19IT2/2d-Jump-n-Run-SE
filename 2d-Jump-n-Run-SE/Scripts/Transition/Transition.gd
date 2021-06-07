@@ -1,7 +1,5 @@
 extends ColorRect
 
-var next_scene_path = "res://Scenes/Levels/32x32_Level/32x32_Level.tscn"
-
 onready var _anim_player = $AnimationPlayer
 
 
