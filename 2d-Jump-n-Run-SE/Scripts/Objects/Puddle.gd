@@ -10,6 +10,10 @@ var damageValue = 2
 
 var temp : float = damageTime
 
+func start(pos):
+	position = pos
+	position.y += 6
+	
 func _on_Puddle_body_entered(body):
 	if body.has_method('get_name'):
 		if body.get_name() == "Player":
