@@ -21,6 +21,7 @@ var health_max : int = 10
 
 signal player_dead
 signal player_stats_changed
+signal spam(pos)
 
 var invincible = false
 
@@ -29,6 +30,9 @@ var coins : int = 0
 var facingRight = true
 
 var pos = Vector2(155, 186)
+
+var lastx = position.x
+var spamtimer = 0
 
 #gets called when the node and its children have entered the scene tree
 func _ready():
@@ -102,7 +106,17 @@ func _physics_process(delta):
 			get_parent().add_child(projectile)
 			projectileCooldown = PROJECTILE_COOLDOWN_TIME
 	projectileCooldown -= delta
-
+	
+	
+	if abs(position.x-lastx)<=20:
+		spamtimer += 1
+	else:
+		lastx = position.x
+		spamtimer = 0
+		
+	if spamtimer >= 300:
+		emit_signal("spam",position)
+		spamtimer = 0
 		
 	if get_position().floor().y > 600:
 		take_damage(5)

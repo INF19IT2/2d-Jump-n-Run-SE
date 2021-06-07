@@ -33,4 +33,5 @@ margin_right = 138.0
 motion_scale = Vector2( 0.5, 1 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 2.11902, 0 )
 texture = ExtResource( 5 )
