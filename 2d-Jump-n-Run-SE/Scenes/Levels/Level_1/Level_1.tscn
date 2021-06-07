@@ -8,8 +8,11 @@
 [ext_resource path="res://Scenes/Objects/Checkpoint.tscn" type="PackedScene" id=6]
 [ext_resource path="res://sound/Level_Loop.wav" type="AudioStream" id=7]
 [ext_resource path="res://Scripts/Audio/Level_1_Audio.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/Level/Level_Script.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/PauseMenu/PaueMenu.tscn" type="PackedScene" id=8]
 
 [node name="Level_1" type="Node2D"]
+script = ExtResource( 7 )
 
 [node name="Area2D" parent="." instance=ExtResource( 6 )]
 position = Vector2( 3133.98, 515.674 )
@@ -83,6 +86,7 @@ position = Vector2( 6691.94, 464.763 )
 [node name="Virus" parent="CanvasLayer" instance=ExtResource( 2 )]
 position = Vector2( 99, 435 )
 
+
 [node name="Audio" type="Node" parent="."]
 script = ExtResource( 8 )
 
@@ -91,3 +95,10 @@ stream = ExtResource( 7 )
 volume_db = -15.145
 autoplay = true
 [connection signal="finished" from="Audio/Loop" to="Audio" method="_on_Loop_finished"]
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer2" instance=ExtResource( 8 )]
+margin_left = -157.616
+margin_top = -195.35
+margin_right = 142.384
+margin_bottom = 204.65
