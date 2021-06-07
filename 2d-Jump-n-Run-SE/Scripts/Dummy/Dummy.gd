@@ -27,9 +27,11 @@ func _physics_process(delta):
 		if(count == 1):
 			velocity.x += speed
 			count = 0
+			$Sprite.flip_h = false
 		elif(count == 0):
 			velocity.x -= speed
 			count = 1
+			$Sprite.flip_h = true
 	
 	
 	#gravity
