@@ -83,6 +83,8 @@ Layer=false
 2d_physics/layer_5="projectiles"
 2d_render/layer_6="puddle"
 2d_physics/layer_6="puddle"
+2d_render/layer_7="win_condition"
+2d_physics/layer_7="win_condition"
 
 [rendering]
 
