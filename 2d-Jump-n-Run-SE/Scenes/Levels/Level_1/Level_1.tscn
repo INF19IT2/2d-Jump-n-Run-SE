@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/Levels/Level_1/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Objects/Animated_Virus.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Scenes/Objects/scientist.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Objects/Puddle.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Objects/Checkpoint.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Objects/Win_Condition.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/PauseMenu/PaueMenu.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Levels/Level_1/Water.tres" type="TileSet" id=9]
 [ext_resource path="res://Scenes/Objects/Level1_BG.tscn" type="PackedScene" id=10]
@@ -113,6 +114,9 @@ position = Vector2( 3800, 528 )
 
 [node name="Crate9" parent="CanvasLayer" instance=ExtResource( 11 )]
 position = Vector2( 3000, 528 )
+
+[node name="WinCondition" parent="CanvasLayer" instance=ExtResource( 7 )]
+position = Vector2( 6944.17, 444.508 )
 
 [node name="Audio" type="Node" parent="."]
 script = ExtResource( 12 )
