@@ -3,6 +3,10 @@ extends KinematicBody2D
 #preload projectile object
 const PROJECTILE = preload("res://Scenes/Objects/Projectile_Enemies.tscn")
 
+const TRANSITION = preload("res://Scenes/Transition/Transition.tscn")
+var level_folder = "res://Scenes/Levels/"
+
+
 #time between shots
 const PROJECTILE_COOLDOWN_TIME = 0.6
 var projectileCooldown = 2
@@ -16,10 +20,10 @@ func _ready():
 func _physics_process(delta):
 	#create projectile on scientist position
 	
-	projectileStartPos.y = get_parent().get_node("CanvasLayer").get_node("Virus").position.y
+	projectileStartPos.y = get_parent().get_node("Virus").position.y
 	projectileStartPos.x = position.x
 	
-	var playerPos = get_parent().get_node("CanvasLayer").get_node("Virus").position.x
+	var playerPos = get_parent().get_node("Virus").position.x
 	
 	if playerPos < self.position.x:
 		facingRight = false
@@ -41,3 +45,6 @@ func take_damage(damage):
 	health -= damage
 	if(health <= 0):
 		queue_free()
+		var transition = TRANSITION.instance()
+		get_parent().add_child(transition)
+		transition.transition_to(level_folder + "VictoryScreen/VictoryScreen.tscn")

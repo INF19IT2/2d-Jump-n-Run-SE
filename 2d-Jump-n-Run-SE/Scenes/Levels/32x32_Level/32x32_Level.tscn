@@ -23,6 +23,9 @@ cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( 524297, 2, 0, 524298, 2, 0, 524307, 2, 0, 524308, 2, 0, 655366, 2, 0, 655367, 2, 0, 655382, 2, 0, 655383, 2, 0, 786432, 1, 0, 786433, 3, 0, 786434, 2, 0, 786435, 1, 0, 786436, 2, 0, 786437, 3, 0, 786438, 0, 0, 786439, 2, 0, 786440, 2, 0, 786441, 1, 0, 786442, 2, 0, 786443, 2, 0, 786444, 1, 0, 786445, 2, 0, 786446, 536870915, 0, 786447, 1, 0, 786448, 2, 0, 786449, 2, 0, 786450, 1, 0, 786451, 2, 0, 786452, 2, 0, 786453, 1, 0, 786454, 2, 0, 786455, 2, 0, 786456, 1, 0, 786457, 536870914, 0, 786458, 2, 0, 786459, 1, 0, 786460, 536870915, 0, 786461, 536870914, 0, 786462, 1, 0 )
 
+[node name="Node2D" parent="CanvasLayer" instance=ExtResource( 2 )]
+position = Vector2( 474.041, 317.259 )
+
 [node name="PauseMenu" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="PauseMenu" instance=ExtResource( 3 )]
@@ -39,6 +42,3 @@ position = Vector2( -131.359, 352.771 )
 scale = Vector2( 0.498636, 0.498636 )
 texture = ExtResource( 5 )
 centered = false
-
-[node name="Node2D" parent="." instance=ExtResource( 2 )]
-position = Vector2( 474.041, 317.259 )
