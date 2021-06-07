@@ -53,11 +53,11 @@ func _physics_process(delta):
 	is_moving = false
 	
 	#define movement
-	if Input.is_action_pressed("move_right"):
+	if Input.is_action_pressed("move_right") and !Input.is_action_pressed("move_left"):
 		velocity.x += speed
 		facingRight = true
 		is_moving = true
-	if Input.is_action_pressed("move_left"):
+	if Input.is_action_pressed("move_left") and !Input.is_action_pressed("move_right"):
 		velocity.x -= speed
 		facingRight = false
 		is_moving = true
