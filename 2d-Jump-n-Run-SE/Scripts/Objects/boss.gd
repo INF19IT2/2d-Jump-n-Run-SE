@@ -33,7 +33,6 @@ func _physics_process(delta):
 		projectile.damage = 2
 		projectile.start(projectileStartPos, facingRight, "enemy")
 		get_parent().add_child(projectile)
-		projectile.set_slider_values()
 		projectileCooldown = PROJECTILE_COOLDOWN_TIME 
 
 	projectileCooldown -= delta

@@ -37,11 +37,7 @@ var spamtimer = 0
 #gets called when the node and its children have entered the scene tree
 func _ready():
 	emit_signal("player_stats_changed", self)
-	var slider = get_node("Control")
-	slider.connect("player_sprite_slider_changed", self, "change_player_size")
-	slider.connect("camera_slider_changed", self, "change_camera")
-	slider.connect("speed_slider_changed", self, "change_speed")
-	slider.connect("jump_slider_changed", self, "change_jump")
+
 
 func set_checkpoint(var check):
 	pos = check
@@ -108,7 +104,6 @@ func _physics_process(delta):
 			var projectile = PROJECTILE.instance()
 			projectile.start(position, facingRight, "player")
 			get_parent().add_child(projectile)
-			projectile.set_slider_values()
 			projectileCooldown = PROJECTILE_COOLDOWN_TIME
 	projectileCooldown -= delta
 	
@@ -151,18 +146,6 @@ func life_potion():
 	health = health_max
 	emit_signal("player_stats_changed", self)
 
-func change_player_size(value):
-	$AnimatedSprite.scale = Vector2(value, value)
-	$CollisionShape2D.scale = Vector2(value, value)
-
-func change_camera(value):
-	$Camera2D.zoom = Vector2(value, value)
-
-func change_speed(value):
-	speed = value
-
-func change_jump(value):
-	jumpForce = value
 
 func get_name():
 	return "Player"

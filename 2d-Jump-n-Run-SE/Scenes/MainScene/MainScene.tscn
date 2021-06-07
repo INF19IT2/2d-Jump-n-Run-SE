@@ -42,7 +42,7 @@ frame_4/delay_sec = 0.0
 [sub_resource type="StyleBoxFlat" id=4]
 content_margin_left = 10.0
 content_margin_right = 10.0
-bg_color = Color( 0.988235, 0.972549, 0, 1 )
+bg_color = Color( 0.988235, 0.972549, 0, 0 )
 expand_margin_left = 10.0
 
 [sub_resource type="DynamicFont" id=5]
@@ -111,21 +111,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LineEdit" type="LineEdit" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -132.0
-margin_top = -229.0
-margin_right = 132.0
-margin_bottom = -173.0
-align = 1
-placeholder_text = "Spielername"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Game" type="Polygon2D" parent="."]
 position = Vector2( 0, 192 )
 color = Color( 0.988235, 0.972549, 0, 1 )
@@ -141,8 +126,8 @@ custom_fonts/bold_font = SubResource( 7 )
 custom_fonts/normal_font = SubResource( 8 )
 custom_colors/default_color = Color( 0.294118, 0.286275, 0.286275, 1 )
 bbcode_enabled = true
-bbcode_text = "[b][i]CORONA GAME[/i][/b]"
-text = "CORONA GAME"
+bbcode_text = "[b][i]INFESTATION[/i][/b]"
+text = "INFESTATION"
 fit_content_height = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -179,11 +164,71 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Node" type="AspectRatioContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1024.0
+margin_top = -600.0
+margin_right = -1024.0
+margin_bottom = -600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Live" type="Polygon2D" parent="Node"]
+position = Vector2( 1022, 448 )
+color = Color( 1, 0, 0, 1 )
+polygon = PoolVector2Array( 1, 0, 1, -32, -87, -32, -119, 0 )
+
+[node name="LiveLabel" type="RichTextLabel" parent="Node/Live"]
+margin_left = -86.0
+margin_top = -32.0
+margin_right = 2.0
+custom_styles/normal = SubResource( 4 )
+custom_fonts/bold_italics_font = SubResource( 5 )
+custom_fonts/italics_font = SubResource( 6 )
+custom_fonts/bold_font = SubResource( 7 )
+custom_fonts/normal_font = SubResource( 8 )
+custom_colors/default_color = Color( 0.294118, 0.286275, 0.286275, 1 )
+bbcode_enabled = true
+bbcode_text = "[right][b][i]LIVE[/i][/b][/right]"
+text = "LIVE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InfectLabel" type="Polygon2D" parent="Node"]
+position = Vector2( 1022.62, 478 )
+color = Color( 0.988235, 0.972549, 0, 1 )
+polygon = PoolVector2Array( 0, 2, -288, 2, -256, -30, 0, -30, 0, -14 )
+
+[node name="INFECTLabel" type="RichTextLabel" parent="Node/InfectLabel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -255.0
+margin_top = -30.0
+custom_styles/normal = SubResource( 4 )
+custom_fonts/bold_italics_font = SubResource( 5 )
+custom_fonts/italics_font = SubResource( 6 )
+custom_fonts/bold_font = SubResource( 7 )
+custom_fonts/normal_font = SubResource( 8 )
+custom_colors/default_color = Color( 0.294118, 0.286275, 0.286275, 1 )
+bbcode_enabled = true
+bbcode_text = "[right][b][i]INFECT THEM ALL![/i][/b][right]"
+text = "INFECT THEM ALL!"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ReturnButton" type="Polygon2D" parent="."]
 visible = false
 modulate = Color( 0.4, 0.458824, 0.498039, 1 )
 position = Vector2( 65, 52 )
 polygon = PoolVector2Array( -1, 52, 39, 12, 39, 36, 103, 36, 103, 68, 39, 68, 39, 92 )
+
 [connection signal="pressed" from="ExitButton" to="." method="_on_ExitButton_pressed"]
 [connection signal="button_down" from="OptionsButton" to="." method="_on_OptionsButton_button_down"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_OptionsButton_pressed"]

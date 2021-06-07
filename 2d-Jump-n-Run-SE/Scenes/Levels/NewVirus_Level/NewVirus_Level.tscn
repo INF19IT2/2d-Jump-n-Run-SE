@@ -3,7 +3,7 @@
 [ext_resource path="res://Scenes/Levels/32x32_Level/32_32_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Objects/Animated_Virus.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/PauseMenu/PaueMenu.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scripts/32x32_Level/32x32_level.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/level/Level_Script.gd" type="Script" id=4]
 [ext_resource path="res://imagesFiles/Background/backgroundInOne_2.png" type="Texture" id=5]
 
 [node name="Node2D" type="Node2D"]
@@ -24,10 +24,8 @@ collision_mask = 7
 [node name="PauseMenu" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="PauseMenu" instance=ExtResource( 3 )]
-margin_left = -662.0
-margin_top = -500.0
-margin_right = -362.0
-margin_bottom = -100.0
+margin_left = -162.0
+margin_right = 138.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
