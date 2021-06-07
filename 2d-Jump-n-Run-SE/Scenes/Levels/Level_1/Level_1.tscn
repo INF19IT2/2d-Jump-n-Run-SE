@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scenes/Levels/Level_1/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Objects/Animated_Virus.tscn" type="PackedScene" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Scripts/Audio/Level_1_Audio.gd" type="Script" id=15]
 [ext_resource path="res://Scenes/Objects/Level1_BG.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Scenes/PauseMenu/PaueMenu.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Objects/Crate.tscn" type="PackedScene" id=18]
 
 [sub_resource type="TileSet" id=1]
 0/name = "water1.png 0"
@@ -217,4 +218,31 @@ margin_right = 142.384
 margin_bottom = 204.65
 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 16 )]
+
+[node name="Crate" parent="." instance=ExtResource( 18 )]
+position = Vector2( 456, 528 )
+
+[node name="Crate2" parent="." instance=ExtResource( 18 )]
+position = Vector2( 960, 368 )
+
+[node name="Crate3" parent="." instance=ExtResource( 18 )]
+position = Vector2( 1424, 112 )
+
+[node name="Crate4" parent="." instance=ExtResource( 18 )]
+position = Vector2( 1808, 368 )
+
+[node name="Crate5" parent="." instance=ExtResource( 18 )]
+position = Vector2( 3016, 528 )
+
+[node name="Crate" parent="Crate5" instance=ExtResource( 18 )]
+position = Vector2( 1216, -1 )
+
+[node name="Crate6" parent="." instance=ExtResource( 18 )]
+position = Vector2( 5408, 526 )
+
+[node name="Crate7" parent="." instance=ExtResource( 18 )]
+position = Vector2( 6392, 525.65 )
+
+[node name="Crate8" parent="." instance=ExtResource( 18 )]
+position = Vector2( 3792, 526.65 )
 [connection signal="finished" from="Audio/Loop" to="Audio" method="_on_Loop_finished"]
