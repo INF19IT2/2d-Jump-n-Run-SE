@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scripts/Audio/Audio_MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://imagesFiles/Background/MainBackground5.png" type="Texture" id=2]
@@ -57,10 +57,6 @@ font_data = ExtResource( 11 )
 
 [sub_resource type="DynamicFont" id=8]
 font_data = ExtResource( 8 )
-
-[sub_resource type="StyleBoxFlat" id=9]
-content_margin_right = 10.0
-bg_color = Color( 1, 0, 0, 1 )
 
 [node name="MainScene" type="TextureRect"]
 anchor_right = 1.0
@@ -126,54 +122,6 @@ margin_right = 132.0
 margin_bottom = -173.0
 align = 1
 placeholder_text = "Spielername"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="InfectLabel" type="Polygon2D" parent="."]
-position = Vector2( 1022.62, 478 )
-color = Color( 0.988235, 0.972549, 0, 1 )
-polygon = PoolVector2Array( 0, 2, -288, 2, -256, -30, 0, -30, 0, -14 )
-
-[node name="INFECTLabel" type="RichTextLabel" parent="InfectLabel"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -255.0
-margin_top = -30.0
-custom_styles/normal = SubResource( 4 )
-custom_fonts/bold_italics_font = SubResource( 5 )
-custom_fonts/italics_font = SubResource( 6 )
-custom_fonts/bold_font = SubResource( 7 )
-custom_fonts/normal_font = SubResource( 8 )
-custom_colors/default_color = Color( 0.294118, 0.286275, 0.286275, 1 )
-bbcode_enabled = true
-bbcode_text = "[right][b][i]INFECT THEM ALL![/i][/b][right]"
-text = "INFECT THEM ALL!"
-scroll_active = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Node" type="Node" parent="."]
-
-[node name="Live" type="Polygon2D" parent="."]
-position = Vector2( 1022, 448 )
-color = Color( 1, 0, 0, 1 )
-polygon = PoolVector2Array( 1, 0, 1, -32, -87, -32, -119, 0 )
-
-[node name="LiveLabel" type="RichTextLabel" parent="Live"]
-margin_left = -87.0
-margin_top = -32.0
-margin_right = 1.0
-custom_styles/normal = SubResource( 9 )
-custom_fonts/bold_italics_font = SubResource( 5 )
-custom_fonts/italics_font = SubResource( 6 )
-custom_fonts/bold_font = SubResource( 7 )
-custom_fonts/normal_font = SubResource( 8 )
-custom_colors/default_color = Color( 0.294118, 0.286275, 0.286275, 1 )
-bbcode_enabled = true
-bbcode_text = "[right][b][i]LIVE[/i][/b][/right]"
-text = "LIVE"
 __meta__ = {
 "_edit_use_anchors_": false
 }

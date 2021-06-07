@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/Levels/32x32_Level/32_32_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Objects/Dummy.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Scenes/Objects/Invincibility_Star.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Objects/Life_Potion.tscn" type="PackedScene" id=10]
 [ext_resource path="res://imagesFiles/Background/backgroundInOne.png" type="Texture" id=11]
+[ext_resource path="res://Scenes/Objects/Crate.tscn" type="PackedScene" id=12]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 5 )
@@ -23,8 +24,6 @@ __meta__ = {
 
 [node name="Virus" parent="CanvasLayer" instance=ExtResource( 4 )]
 position = Vector2( 50, 367 )
-collision_layer = 2
-collision_mask = 7
 
 [node name="TileMap" type="TileMap" parent="CanvasLayer"]
 tile_set = ExtResource( 1 )
@@ -42,11 +41,9 @@ gravity_distance_scale = 0.008
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
 position = Vector2( 848.618, 351.055 )
-scale = Vector2( 0.5, 0.5 )
 
 [node name="scientist" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1342.23, 347.641 )
-scale = Vector2( 0.5, 0.5 )
 
 [node name="Area2D" parent="." instance=ExtResource( 7 )]
 position = Vector2( 322.109, 341.474 )
@@ -65,6 +62,8 @@ motion_scale = Vector2( 0.5, 1 )
 motion_mirroring = Vector2( 3840, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 1, 0 )
 texture = ExtResource( 11 )
 centered = false
+
+[node name="Crate" parent="." instance=ExtResource( 12 )]
+position = Vector2( 184, 367 )

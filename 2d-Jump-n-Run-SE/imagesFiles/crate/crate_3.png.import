@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/guy_waling_animation.png-f8a29e82f0d4534234bcf2b2b9edb237.stex"
+path="res://.import/crate_3.png-be2c6dea29e9de36bab0de1156034433.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://imagesFiles/Dummy/guy_waling_animation.png"
-dest_files=[ "res://.import/guy_waling_animation.png-f8a29e82f0d4534234bcf2b2b9edb237.stex" ]
+source_file="res://imagesFiles/crate/crate_3.png"
+dest_files=[ "res://.import/crate_3.png-be2c6dea29e9de36bab0de1156034433.stex" ]
 
 [params]
 
