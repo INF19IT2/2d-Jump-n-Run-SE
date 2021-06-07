@@ -26,7 +26,7 @@ func _ready():
 func set_slider_values():
 	#speed slider
 	var speed_slider = get_parent()
-	if speed_slider.name != "Node2D":
+	if speed_slider.get_class() != "Node2D":
 		speed_slider = speed_slider.get_parent()
 	speed_slider = speed_slider.get_node("CanvasLayer").get_node("Virus").get_node("Control").get_node("Projectile_Speed_Slider")
 	speed = speed_slider.value * 64
@@ -34,7 +34,7 @@ func set_slider_values():
 
 	#lifetime slider
 	var lifetime_slider = get_parent()
-	if lifetime_slider.name != "Node2D":
+	if lifetime_slider.get_class() != "Node2D":
 		lifetime_slider = lifetime_slider.get_parent()
 	lifetime_slider = lifetime_slider.get_node("CanvasLayer").get_node("Virus").get_node("Control").get_node("Projectile_Lifetime_Slider")
 	lifetime = lifetime_slider.value
@@ -43,7 +43,7 @@ func set_slider_values():
 
 	#size slider
 	var size_slider = get_parent()
-	if size_slider.name != "Node2D":
+	if size_slider.get_class() != "Node2D":
 		size_slider = size_slider.get_parent()
 	size_slider = size_slider.get_node("CanvasLayer").get_node("Virus").get_node("Control").get_node("Projectile_Size_Slider")
 	var scaling_value = size_slider.value
