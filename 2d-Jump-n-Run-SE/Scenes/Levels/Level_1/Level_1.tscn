@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/Levels/Level_1/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Objects/Animated_Virus.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Scenes/Objects/Checkpoint.tscn" type="PackedScene" id=6]
 [ext_resource path="res://sound/Level_Loop.wav" type="AudioStream" id=7]
 [ext_resource path="res://Scripts/Audio/Level_1_Audio.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/Objects/Win_Condition.tscn" type="PackedScene" id=9]
 
 [node name="Level_1" type="Node2D"]
 
@@ -82,6 +83,9 @@ position = Vector2( 6691.94, 464.763 )
 
 [node name="Virus" parent="CanvasLayer" instance=ExtResource( 2 )]
 position = Vector2( 99, 435 )
+
+[node name="Win_Condition" parent="CanvasLayer" instance=ExtResource( 9 )]
+position = Vector2( 6944.98, 445.039 )
 
 [node name="Audio" type="Node" parent="."]
 script = ExtResource( 8 )
