@@ -193,5 +193,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[connection signal="value_changed" from="OptionsBackground/Container/Music/Music-Slider" to="." method="_on_MusicSlider_value_changed"]
 [connection signal="item_selected" from="OptionsBackground/Container/Resolution/ResolutionDropdown" to="." method="_on_ResolutionDropdown_item_selected"]
 [connection signal="toggled" from="OptionsBackground/Container/Fullscreen/FullscreenCheckBox" to="." method="_on_FullscreenCheckBox_toggled"]

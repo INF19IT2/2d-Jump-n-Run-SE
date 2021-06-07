@@ -4,13 +4,13 @@
 [ext_resource path="res://Scenes/Objects/Dummy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/PauseMenu/PaueMenu.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Objects/Animated_Virus.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scripts/32x32_Level/32x32_level.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/Level/Level_Script.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/Objects/scientist.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Objects/Checkpoint.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Objects/Puddle.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Objects/Invincibility_Star.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Objects/Life_Potion.tscn" type="PackedScene" id=10]
-[ext_resource path="res://imagesFiles/Background/backgroundInOne.png" type="Texture" id=11]
+[ext_resource path="res://Scenes/Objects/Level1_BG.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Objects/Crate.tscn" type="PackedScene" id=12]
 
 [node name="Node2D" type="Node2D"]
@@ -54,16 +54,7 @@ position = Vector2( 460.219, 326.516 )
 [node name="Life_Potion" parent="." instance=ExtResource( 10 )]
 position = Vector2( 1264, 315.055 )
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2( -300, -340 )
-motion_scale = Vector2( 0.5, 1 )
-motion_mirroring = Vector2( 3840, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-texture = ExtResource( 11 )
-centered = false
+[node name="ParallaxBackground" parent="." instance=ExtResource( 11 )]
 
 [node name="Crate" parent="." instance=ExtResource( 12 )]
 position = Vector2( 184, 367 )
