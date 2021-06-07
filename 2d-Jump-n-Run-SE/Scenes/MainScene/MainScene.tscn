@@ -164,6 +164,65 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Node" type="AspectRatioContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1024.0
+margin_top = -600.0
+margin_right = -1024.0
+margin_bottom = -600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Live" type="Polygon2D" parent="Node"]
+position = Vector2( 1022, 448 )
+color = Color( 1, 0, 0, 1 )
+polygon = PoolVector2Array( 1, 0, 1, -32, -87, -32, -119, 0 )
+
+[node name="LiveLabel" type="RichTextLabel" parent="Node/Live"]
+margin_left = -86.0
+margin_top = -32.0
+margin_right = 2.0
+custom_styles/normal = SubResource( 4 )
+custom_fonts/bold_italics_font = SubResource( 5 )
+custom_fonts/italics_font = SubResource( 6 )
+custom_fonts/bold_font = SubResource( 7 )
+custom_fonts/normal_font = SubResource( 8 )
+custom_colors/default_color = Color( 0.294118, 0.286275, 0.286275, 1 )
+bbcode_enabled = true
+bbcode_text = "[right][b][i]LIVE[/i][/b][/right]"
+text = "LIVE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InfectLabel" type="Polygon2D" parent="Node"]
+position = Vector2( 1022.62, 478 )
+color = Color( 0.988235, 0.972549, 0, 1 )
+polygon = PoolVector2Array( 0, 2, -288, 2, -256, -30, 0, -30, 0, -14 )
+
+[node name="INFECTLabel" type="RichTextLabel" parent="Node/InfectLabel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -255.0
+margin_top = -30.0
+custom_styles/normal = SubResource( 4 )
+custom_fonts/bold_italics_font = SubResource( 5 )
+custom_fonts/italics_font = SubResource( 6 )
+custom_fonts/bold_font = SubResource( 7 )
+custom_fonts/normal_font = SubResource( 8 )
+custom_colors/default_color = Color( 0.294118, 0.286275, 0.286275, 1 )
+bbcode_enabled = true
+bbcode_text = "[right][b][i]INFECT THEM ALL![/i][/b][right]"
+text = "INFECT THEM ALL!"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ReturnButton" type="Polygon2D" parent="."]
 visible = false
 modulate = Color( 0.4, 0.458824, 0.498039, 1 )
