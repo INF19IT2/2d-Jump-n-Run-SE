@@ -19,6 +19,10 @@ config/name="2d- Jump-n- Run- Se"
 run/main_scene="res://Scenes/MainScene/MainScene.tscn"
 config/icon="res://imagesFiles/MISC/icon.png"
 
+[display]
+
+window/size/resizable=false
+
 [input]
 
 move_left={

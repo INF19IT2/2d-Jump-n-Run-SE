@@ -13,11 +13,11 @@ func _on_ExitButton_pressed():
 
 
 func _on_Level1Button_pressed():
-	get_tree().change_scene(level_folder + "32x32_Level/32x32_Level.tscn")
+	get_tree().change_scene(level_folder + "Level_1/Level_1.tscn")
 
 
 func _on_Level2Button_pressed():
-	get_tree().change_scene(level_folder + "NewVirus_Level/NewVirus_Level.tscn")
+	get_tree().change_scene(level_folder + "32x32_Level/32x32_Level.tscn")
 
 
 #func _on_Level3Button_pressed():
