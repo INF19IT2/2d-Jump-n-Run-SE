@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Levels/Level_1/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Objects/boss.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/PauseMenu/PaueMenu.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Objects/Animated_Virus.tscn" type="PackedScene" id=4]
 [ext_resource path="res://imagesFiles/Background/backgroundInOne_2.png" type="Texture" id=5]
+[ext_resource path="res://Scripts/32x32_Level/BossLevel_Audio.gd" type="Script" id=6]
+[ext_resource path="res://sound/Boss_loop.wav" type="AudioStream" id=7]
+[ext_resource path="res://sound/Boss_intro.wav" type="AudioStream" id=8]
 
 [node name="Node2D" type="Node2D"]
 
@@ -42,3 +45,14 @@ position = Vector2( -131.359, 352.771 )
 scale = Vector2( 0.498636, 0.498636 )
 texture = ExtResource( 5 )
 centered = false
+
+[node name="Audio" type="Node" parent="."]
+script = ExtResource( 6 )
+
+[node name="Intro" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 8 )
+
+[node name="Loop" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource( 7 )
+[connection signal="finished" from="Audio/Intro" to="Audio" method="_on_Intro_finished"]
+[connection signal="finished" from="Audio/Loop" to="Audio" method="_on_Loop_finished"]
