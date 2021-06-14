@@ -230,11 +230,9 @@ position = Vector2( 65, 52 )
 polygon = PoolVector2Array( -1, 52, 39, 12, 39, 36, 103, 36, 103, 68, 39, 68, 39, 92 )
 
 [connection signal="pressed" from="ExitButton" to="." method="_on_ExitButton_pressed"]
-[connection signal="button_down" from="OptionsButton" to="." method="_on_OptionsButton_button_down"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_OptionsButton_pressed"]
 [connection signal="pressed" from="StartLevelButton" to="." method="_on_StartLevelButton_pressed"]
 [connection signal="finished" from="Audio/Loop" to="Audio" method="_on_Loop_finished"]
 [connection signal="finished" from="Audio/Intro" to="Audio" method="_on_Intro_finished"]
-[connection signal="hide" from="Options" to="." method="_on_Options_hide"]
 [connection signal="button_down" from="adsfasd" to="." method="_on_ReturnButton_button_down"]
 [connection signal="pressed" from="adsfasd" to="." method="_on_ReturnButton_pressed"]

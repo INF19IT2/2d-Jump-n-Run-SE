@@ -8,8 +8,10 @@
 [ext_resource path="res://Scripts/32x32_Level/BossLevel_Audio.gd" type="Script" id=6]
 [ext_resource path="res://sound/Boss_loop.wav" type="AudioStream" id=7]
 [ext_resource path="res://sound/Boss_intro.wav" type="AudioStream" id=8]
+[ext_resource path="res://Scripts/32x32_Level/32x32_level.gd" type="Script" id=9]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 9 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_enable = true
