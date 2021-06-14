@@ -152,18 +152,6 @@ margin_top = -256.0
 margin_right = 160.0
 margin_bottom = 256.0
 
-[node name="adsfasd" type="TextureButton" parent="."]
-visible = false
-modulate = Color( 0.4, 0.458824, 0.498039, 1 )
-margin_left = 65.0
-margin_top = 52.0
-margin_right = 167.0
-margin_bottom = 152.0
-toggle_mode = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Node" type="AspectRatioContainer" parent="."]
 anchor_left = 1.0
 anchor_top = 1.0
@@ -234,5 +222,3 @@ polygon = PoolVector2Array( -1, 52, 39, 12, 39, 36, 103, 36, 103, 68, 39, 68, 39
 [connection signal="pressed" from="StartLevelButton" to="." method="_on_StartLevelButton_pressed"]
 [connection signal="finished" from="Audio/Loop" to="Audio" method="_on_Loop_finished"]
 [connection signal="finished" from="Audio/Intro" to="Audio" method="_on_Intro_finished"]
-[connection signal="button_down" from="adsfasd" to="." method="_on_ReturnButton_button_down"]
-[connection signal="pressed" from="adsfasd" to="." method="_on_ReturnButton_pressed"]
