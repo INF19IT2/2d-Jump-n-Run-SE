@@ -69,3 +69,7 @@ zoom = Vector2( 0.35, 0.35 )
 smoothing_speed = 2.0
 
 [node name="HealthBar" parent="." instance=ExtResource( 21 )]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.25
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

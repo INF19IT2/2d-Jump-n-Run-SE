@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 signal hit
 var is_moving: bool = false
+var timer_animation: bool = false
 
 export var speed : int = 75
 export var jumpForce : int = 250
@@ -34,9 +35,12 @@ var pos = Vector2(155, 186)
 var lastx = position.x
 var spamtimer = 0
 
+var timer
+
 #gets called when the node and its children have entered the scene tree
 func _ready():
 	emit_signal("player_stats_changed", self)
+	timer = get_node("Timer")
 
 
 func set_checkpoint(var check):
@@ -57,13 +61,17 @@ func _physics_process(delta):
 		velocity.x += speed
 		facingRight = true
 		is_moving = true
+		timer_animation = true
+		timer.start()
 	if Input.is_action_pressed("move_left") and !Input.is_action_pressed("move_right"):
 		velocity.x -= speed
 		facingRight = false
 		is_moving = true
+		timer_animation = true
+		timer.start()
 		
 	#idle Animation
-	if velocity.length() == 0:
+	if !is_moving and !timer_animation:
 		$AnimatedSprite.play("idle")
 		$AnimatedSprite.animation = "idle"
 		
@@ -149,3 +157,7 @@ func life_potion():
 
 func get_name():
 	return "Player"
+
+
+func _on_Timer_timeout():
+	timer_animation = false
